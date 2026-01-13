@@ -1,11 +1,13 @@
-import React from 'react';
-import Header from './components/Header/Header';
-import HeroSlider from './components/Hero/HeroSlider';
-import { 
-  FaLeaf, 
-  FaWater, 
-  FaSeedling, 
-  FaRecycle, 
+import React from "react";
+import Header from "./components/Header/Header";
+import HeroSlider from "./components/Hero/HeroSlider";
+import MapaContacto from "./components/Contacto/MapaContacto";
+import SistemaDonaciones from "./components/Donaciones/SistemaDonaciones";
+import {
+  FaLeaf,
+  FaWater,
+  FaSeedling,
+  FaRecycle,
   FaBook,
   FaHandsHelping,
   FaUtensils,
@@ -19,25 +21,26 @@ import {
   FaHandHoldingHeart,
   FaUsers,
   FaChartLine,
-  FaGlobeAmericas
-} from 'react-icons/fa';
-import './styles/global.css';
+  FaGlobeAmericas,
+} from "react-icons/fa";
+import "./styles/global.css";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <HeroSlider />
-      
+
       {/* Sección Nosotros */}
       <section id="nosotros" className="section section-dark">
         <div className="container">
           <h2 className="section-title">¿Quiénes Somos?</h2>
           <p className="section-subtitle">
-            Fundación MINK'AY trabaja en Chuquisaca para reducir la pobreza mediante 
-            programas solidarios de seguridad alimentaria y desarrollo sostenible.
+            Fundación MINK'AY trabaja en Chuquisaca para reducir la pobreza
+            mediante programas solidarios de seguridad alimentaria y desarrollo
+            sostenible.
           </p>
-          
+
           <div className="cards-grid">
             <div className="card">
               <div className="card-icon">
@@ -46,11 +49,14 @@ function App() {
               <div className="card-content">
                 <h3>Nuestra Misión</h3>
                 <p>
-                  Contribuir a la reducción de la pobreza en áreas rurales y periurbanas del departamento de Chuquisaca, 
-                  mediante programas solidarios de donación, seguridad alimentaria y desarrollo sostenible, 
-                  promoviendo el acceso a alimentos saludables, el uso responsable del agua, el cuidado del medio ambiente 
-                  y la implementación de sistemas innovadores como la hidroponía y la alimentación complementaria, 
-                  fortaleciendo la autonomía y la dignidad de las familias beneficiarias.
+                  Contribuir a la reducción de la pobreza en áreas rurales y
+                  periurbanas del departamento de Chuquisaca, mediante programas
+                  solidarios de donación, seguridad alimentaria y desarrollo
+                  sostenible, promoviendo el acceso a alimentos saludables, el
+                  uso responsable del agua, el cuidado del medio ambiente y la
+                  implementación de sistemas innovadores como la hidroponía y la
+                  alimentación complementaria, fortaleciendo la autonomía y la
+                  dignidad de las familias beneficiarias.
                 </p>
               </div>
             </div>
@@ -62,9 +68,12 @@ function App() {
               <div className="card-content">
                 <h3>Nuestra Visión</h3>
                 <p>
-                  Ser una fundación referente en Chuquisaca en la lucha contra la pobreza y la inseguridad alimentaria, 
-                  reconocida por su impacto social, su compromiso con el medio ambiente y su promoción de soluciones 
-                  sostenibles, innovadoras y comunitarias que mejoren la calidad de vida de las poblaciones más vulnerables.
+                  Ser una fundación referente en Chuquisaca en la lucha contra
+                  la pobreza y la inseguridad alimentaria, reconocida por su
+                  impacto social, su compromiso con el medio ambiente y su
+                  promoción de soluciones sostenibles, innovadoras y
+                  comunitarias que mejoren la calidad de vida de las poblaciones
+                  más vulnerables.
                 </p>
               </div>
             </div>
@@ -76,19 +85,37 @@ function App() {
               <div className="card-content">
                 <h3>Nuestros Valores</h3>
                 <ul className="values-list">
-                  <li><strong>Solidaridad:</strong> Compromiso con las comunidades más necesitadas</li>
-                  <li><strong>Transparencia:</strong> Gestión honesta y clara de los recursos</li>
-                  <li><strong>Sostenibilidad:</strong> Soluciones que perduren en el tiempo</li>
-                  <li><strong>Innovación:</strong> Uso de tecnologías apropiadas y modernas</li>
-                  <li><strong>Respeto:</strong> Por las personas y el medio ambiente</li>
-                  <li><strong>Compromiso:</strong> Con los Objetivos de Desarrollo Sostenible</li>
+                  <li>
+                    <strong>Solidaridad:</strong> Compromiso con las comunidades
+                    más necesitadas
+                  </li>
+                  <li>
+                    <strong>Transparencia:</strong> Gestión honesta y clara de
+                    los recursos
+                  </li>
+                  <li>
+                    <strong>Sostenibilidad:</strong> Soluciones que perduren en
+                    el tiempo
+                  </li>
+                  <li>
+                    <strong>Innovación:</strong> Uso de tecnologías apropiadas y
+                    modernas
+                  </li>
+                  <li>
+                    <strong>Respeto:</strong> Por las personas y el medio
+                    ambiente
+                  </li>
+                  <li>
+                    <strong>Compromiso:</strong> Con los Objetivos de Desarrollo
+                    Sostenible
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
+
       {/* Sección Objetivos */}
       <section id="objetivos" className="section section-light">
         <div className="container">
@@ -96,7 +123,7 @@ function App() {
           <p className="section-subtitle">
             Metas claras para generar impacto sostenible y transformar vidas
           </p>
-          
+
           <div className="objectives-grid">
             {[
               "Fortalecer la seguridad alimentaria en comunidades rurales y periurbanas del departamento de Chuquisaca, mediante programas de producción, acceso y distribución de alimentos nutritivos y saludables.",
@@ -107,7 +134,7 @@ function App() {
               "Desarrollar capacidades comunitarias, promoviendo la autogestión, el emprendimiento productivo y la participación activa de las comunidades en su propio desarrollo.",
               "Establecer alianzas estratégicas con municipios, organizaciones sociales, instituciones educativas, empresas y cooperantes nacionales e internacionales para ampliar el impacto de los programas.",
               "Canalizar y gestionar donaciones de manera transparente, garantizando que los recursos lleguen de forma efectiva a las poblaciones que más lo necesitan.",
-              "Implementar programas de alimentación complementaria, enfocados en la niñez, adultos mayores y personas en situación de riesgo nutricional."
+              "Implementar programas de alimentación complementaria, enfocados en la niñez, adultos mayores y personas en situación de riesgo nutricional.",
             ].map((objetivo, index) => (
               <div key={index} className="objective-card">
                 <div className="objective-number">{index + 1}</div>
@@ -117,7 +144,7 @@ function App() {
           </div>
         </div>
       </section>
-      
+
       {/* Sección Áreas de Acción */}
       <section id="areas" className="section section-dark">
         <div className="container">
@@ -125,17 +152,49 @@ function App() {
           <p className="section-subtitle">
             Programas estratégicos para el desarrollo comunitario sostenible
           </p>
-          
+
           <div className="areas-grid">
             {[
-              { icon: <FaSeedling />, title: "Seguridad Alimentaria", desc: "Programas de producción, acceso y distribución de alimentos nutritivos para combatir la desnutrición" },
-              { icon: <FaWater />, title: "Hidroponía", desc: "Implementación de sistemas hidropónicos que optimizan el uso del agua y permiten producir alimentos saludables" },
-              { icon: <FaRecycle />, title: "Uso Responsable del Agua", desc: "Educación y tecnologías de ahorro hídrico adaptadas al contexto local para preservar este recurso vital" },
-              { icon: <FaLeaf />, title: "Medio Ambiente", desc: "Promoción de prácticas sostenibles y educación ambiental para proteger nuestros ecosistemas" },
-              { icon: <FaBook />, title: "Educación Nutricional", desc: "Formación en hábitos alimenticios saludables dirigida a niños, jóvenes y mujeres de comunidades rurales" },
-              { icon: <FaUsers />, title: "Desarrollo Comunitario", desc: "Fortalecimiento de capacidades locales, autogestión y emprendimiento productivo en las comunidades" },
-              { icon: <FaUtensils />, title: "Alimentación Complementaria", desc: "Programas especializados para niños, adultos mayores y personas en riesgo nutricional" },
-              { icon: <FaHeart />, title: "Apoyo a Familias Vulnerables", desc: "Asistencia integral para familias en situación de pobreza extrema" }
+              {
+                icon: <FaSeedling />,
+                title: "Seguridad Alimentaria",
+                desc: "Programas de producción, acceso y distribución de alimentos nutritivos para combatir la desnutrición",
+              },
+              {
+                icon: <FaWater />,
+                title: "Hidroponía",
+                desc: "Implementación de sistemas hidropónicos que optimizan el uso del agua y permiten producir alimentos saludables",
+              },
+              {
+                icon: <FaRecycle />,
+                title: "Uso Responsable del Agua",
+                desc: "Educación y tecnologías de ahorro hídrico adaptadas al contexto local para preservar este recurso vital",
+              },
+              {
+                icon: <FaLeaf />,
+                title: "Medio Ambiente",
+                desc: "Promoción de prácticas sostenibles y educación ambiental para proteger nuestros ecosistemas",
+              },
+              {
+                icon: <FaBook />,
+                title: "Educación Nutricional",
+                desc: "Formación en hábitos alimenticios saludables dirigida a niños, jóvenes y mujeres de comunidades rurales",
+              },
+              {
+                icon: <FaUsers />,
+                title: "Desarrollo Comunitario",
+                desc: "Fortalecimiento de capacidades locales, autogestión y emprendimiento productivo en las comunidades",
+              },
+              {
+                icon: <FaUtensils />,
+                title: "Alimentación Complementaria",
+                desc: "Programas especializados para niños, adultos mayores y personas en riesgo nutricional",
+              },
+              {
+                icon: <FaHeart />,
+                title: "Apoyo a Familias Vulnerables",
+                desc: "Asistencia integral para familias en situación de pobreza extrema",
+              },
             ].map((area, index) => (
               <div key={index} className="area-card">
                 <div className="area-icon">{area.icon}</div>
@@ -146,164 +205,181 @@ function App() {
           </div>
         </div>
       </section>
-      
+
+      {/* Sección Donaciones */}
       {/* Sección Donaciones */}
       <section id="donaciones" className="donation-section">
         <div className="container">
           <h2 className="section-title">Haz la Diferencia con tu Donación</h2>
           <p className="section-subtitle">
-            Tu apoyo nos permite llegar a más familias vulnerables en Chuquisaca. 
-            Cada donación se gestiona con total transparencia.
+            Tu apoyo nos permite llegar a más familias vulnerables en
+            Chuquisaca. Elige el método de donación que más te convenga.
           </p>
-          
-          <div className="donation-grid">
-            {[
-              { title: "Básico", amount: "50 Bs", features: [
-                "Alimentos para 1 familia por 1 semana",
-                "Material educativo nutricional",
-                "Apoyo a programas comunitarios"
-              ]},
-              { title: "Solidario", amount: "150 Bs", features: [
-                "Alimentos para 3 familias por 1 semana",
-                "Kit de hidroponía básico",
-                "Talleres de educación ambiental",
-                "Seguimiento nutricional"
-              ]},
-              { title: "Transformador", amount: "300 Bs", features: [
-                "Alimentos para 6 familias por 1 mes",
-                "Sistema hidropónico completo",
-                "Capacitación productiva",
-                "Tecnología de ahorro hídrico",
-                "Impacto sostenible a largo plazo"
-              ]}
-            ].map((plan, index) => (
-              <div key={index} className="donation-card">
-                <div className="donation-icon">
-                  <FaHandHoldingHeart size={40} />
-                </div>
-                <h3>{plan.title}</h3>
-                <div className="donation-amount">{plan.amount}</div>
-                <ul className="donation-features">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx}>{feature}</li>
-                  ))}
-                </ul>
-                <button className="btn btn-donate">Donar Ahora</button>
-              </div>
-            ))}
-          </div>
-          
-          <div className="bank-info">
-            <h3>Información Bancaria</h3>
-            <div className="bank-details">
-              <div className="bank-detail">
-                <span className="bank-label">Banco:</span>
-                <span className="bank-value">Banco Unión</span>
-              </div>
-              <div className="bank-detail">
-                <span className="bank-label">Titular:</span>
-                <span className="bank-value">Fundación MINK'AY</span>
-              </div>
-              <div className="bank-detail">
-                <span className="bank-label">Cuenta:</span>
-                <span className="bank-value">10000123456789</span>
-              </div>
-              <div className="bank-detail">
-                <span className="bank-label">NIT:</span>
-                <span className="bank-value">123456789</span>
-              </div>
+
+          {/* Sistema de Donaciones Mejorado */}
+          <SistemaDonaciones />
+
+          {/* Información Bancaria (si aún la quieres) */}
+          <div className="bank-info-simple">
+            <h3>¿Prefieres transferencia directa?</h3>
+            <div className="simple-bank-details">
+              <p>
+                <strong>Banco:</strong> Banco Unión
+              </p>
+              <p>
+                <strong>Cuenta:</strong> 1000-1234-5678-9
+              </p>
+              <p>
+                <strong>Titular:</strong> Fundación MINK'AY
+              </p>
+              <p>
+                <strong>NIT:</strong> 123456789
+              </p>
             </div>
           </div>
         </div>
       </section>
-      
-      {/* Sección Contacto */}
+
+      {/* Sección Contacto con Mapa */}
       <section id="contacto" className="section section-light">
         <div className="container">
           <h2 className="section-title">Contáctanos</h2>
           <p className="section-subtitle">
-            ¿Tienes preguntas o deseas colaborar? Estamos aquí para ayudarte
+            Visítanos en nuestra oficina o contáctanos por correo
           </p>
-          
+
+          {/* Mapa de Contacto */}
+          <MapaContacto />
+
+          {/* Información de contacto adicional */}
           <div className="contact-grid">
             <div className="contact-card">
               <div className="contact-icon">
-                <FaMapMarkerAlt size={50} />
-              </div>
-              <h3>Ubicación</h3>
-              <p>Chuquisaca, Bolivia</p>
-              <p>Trabajamos en áreas rurales y periurbanas del departamento</p>
-            </div>
-            
-            <div className="contact-card">
-              <div className="contact-icon">
-                <FaEnvelope size={50} />
+                <FaEnvelope size={50} color="#537A5A" />
               </div>
               <h3>Correo Electrónico</h3>
-              <p><a href="mailto:contacto@minkay.org">contacto@minkay.org</a></p>
+              <p>
+                <a href="mailto:contacto@minkay.org" className="contact-link">
+                  contacto@minkay.org
+                </a>
+              </p>
               <p>Responderemos tu mensaje en menos de 24 horas</p>
             </div>
-            
+
             <div className="contact-card">
               <div className="contact-icon">
-                <FaPhone size={50} />
+                <FaPhone size={50} color="#537A5A" />
+              </div>
+              <h3>Teléfono</h3>
+              <p>
+                <a href="tel:+59112345678" className="contact-link">
+                  +591 1234 5678
+                </a>
+              </p>
+              <p>Lunes a Viernes de 8:00 a 18:00</p>
+            </div>
+
+            <div className="contact-card">
+              <div className="contact-icon">
+                <FaUsers size={50} color="#537A5A" />
               </div>
               <h3>Redes Sociales</h3>
               <p>Síguenos para estar al día con nuestros proyectos</p>
               <div className="social-icons">
-                <a href="#" className="social-icon"><FaFacebook /></a>
-                <a href="#" className="social-icon"><FaInstagram /></a>
-                <a href="#" className="social-icon"><FaTwitter /></a>
+                <a href="#" className="social-icon" aria-label="Facebook">
+                  <FaFacebook size={24} />
+                </a>
+                <a href="#" className="social-icon" aria-label="Instagram">
+                  <FaInstagram size={24} />
+                </a>
+                <a href="#" className="social-icon" aria-label="Twitter">
+                  <FaTwitter size={24} />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
+
       {/* Footer */}
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
             <div className="footer-section">
-              <h3>🌿 MINK'AY</h3>
-              <p>Fundación dedicada a la reducción de la pobreza y el desarrollo sostenible en Chuquisaca.</p>
-              <p><strong>Transparencia y compromiso</strong> con las comunidades más vulnerables.</p>
+              <h3 className="footer-logo">🌿 MINK'AY</h3>
+              <p>
+                Fundación dedicada a la reducción de la pobreza y el desarrollo
+                sostenible en Chuquisaca.
+              </p>
+              <p>
+                <strong>Transparencia y compromiso</strong> con las comunidades
+                más vulnerables.
+              </p>
             </div>
-            
+
             <div className="footer-section">
               <h3>Enlaces Rápidos</h3>
-              <a href="#nosotros">Quiénes Somos</a>
-              <a href="#objetivos">Objetivos</a>
-              <a href="#areas">Áreas de Acción</a>
-              <a href="#donaciones">Donaciones</a>
-              <a href="#contacto">Contacto</a>
+              <a href="#nosotros" className="footer-link">
+                Quiénes Somos
+              </a>
+              <a href="#objetivos" className="footer-link">
+                Objetivos
+              </a>
+              <a href="#areas" className="footer-link">
+                Áreas de Acción
+              </a>
+              <a href="#donaciones" className="footer-link">
+                Donaciones
+              </a>
+              <a href="#contacto" className="footer-link">
+                Contacto
+              </a>
             </div>
-            
+
             <div className="footer-section">
               <h3>Contacto</h3>
-              <p>📍 Chuquisaca, Bolivia</p>
-              <p>📧 contacto@minkay.org</p>
-              <p>🕒 Lun - Vie: 8:00 - 18:00</p>
+              <p className="footer-contact">
+                <FaMapMarkerAlt /> La Paz 562, Sucre, Chuquisaca
+              </p>
+              <p className="footer-contact">
+                <FaEnvelope />{" "}<a href="mailto:contacto@minkay.org">contacto@minkay.org</a>
+              </p>
+              <p className="footer-contact">
+                <FaPhone /> +591 74536806
+              </p>
               <div className="footer-social">
-                <a href="#"><FaFacebook /></a>
-                <a href="#"><FaInstagram /></a>
-                <a href="#"><FaTwitter /></a>
+                <a href="#" aria-label="Facebook">
+                  <FaFacebook />
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <FaInstagram />
+                </a>
+                <a href="#" aria-label="Twitter">
+                  <FaTwitter />
+                </a>
               </div>
             </div>
-            
+
             <div className="footer-section">
               <h3>Nuestro Impacto</h3>
-              <p>✓ Familias beneficiadas</p>
-              <p>✓ Sistemas hidropónicos instalados</p>
-              <p>✓ Capacitaciones realizadas</p>
-              <p>✓ Comunidades alcanzadas</p>
+              <p className="footer-impact">✓ Familias beneficiadas</p>
+              <p className="footer-impact">
+                ✓ Sistemas hidropónicos instalados
+              </p>
+              <p className="footer-impact">✓ Capacitaciones realizadas</p>
+              <p className="footer-impact">✓ Comunidades alcanzadas</p>
               <button className="btn btn-footer">Únete a Nuestra Causa</button>
             </div>
           </div>
-          
+
           <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Fundación MINK'AY. Todos los derechos reservados.</p>
-            <p>Hecho con ❤️ para las comunidades de Chuquisaca</p>
+            <p>
+              &copy; {new Date().getFullYear()} Fundación MINK'AY. Todos los
+              derechos reservados.
+            </p>
+            <p className="footer-heart">
+              Hecho con ❤️ para las comunidades de Chuquisaca
+            </p>
           </div>
         </div>
       </footer>

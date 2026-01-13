@@ -1,0 +1,139 @@
+.mapa-container {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.mapa-titulo {
+  color: #537A5A;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.mapa-direccion {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.mapa-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mapa-iframe {
+  display: block;
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+}
+
+.mapa-iframe:hover {
+  filter: grayscale(0%);
+}
+
+.info-contacto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #F9F9F9;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-5px);
+  background: #F2E2D2;
+}
+
+.info-icon {
+  font-size: 2rem;
+  color: #537A5A;
+  flex-shrink: 0;
+}
+
+.info-item h4 {
+  color: #537A5A;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.info-item p {
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.info-item a {
+  color: #537A5A;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.info-item a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mapa-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .mapa-titulo {
+    font-size: 1.5rem;
+  }
+  
+  .mapa-direccion {
+    font-size: 1rem;
+  }
+  
+  .info-contacto {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .info-item {
+    padding: 1rem;
+  }
+}
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #6e967d;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.info-note {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+  margin-top: 0.5rem;
+}

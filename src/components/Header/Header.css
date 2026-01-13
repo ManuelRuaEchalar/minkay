@@ -1,407 +1,328 @@
+/* ===== HEADER OPTIMIZADO ===== */
 .header {
-  background: #FFFFFF;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(83, 122, 90, 0.15);
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
-  border-bottom: 1px solid rgba(83, 122, 90, 0.1);
+  transition: all 0.3s ease;
 }
 
+/* Top Bar más compacto */
 .top-bar {
   background: linear-gradient(135deg, #537A5A, #3A5740);
   color: #F2E2D2;
-  padding: 0.6rem 0;
-  font-size: 0.95rem;
-  border-bottom: 1px solid rgba(242, 226, 210, 0.2);
+  padding: 0.4rem 0;
+  font-size: 0.85rem;
+  display: none; /* Ocultamos en móvil para ahorrar espacio */
 }
 
 .top-bar-content {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
-.location-info, .contact-info {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-weight: 500;
-}
-
-.location-icon, .email-icon {
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-.contact-info a {
-  color: #F2E2D2;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  padding: 0.3rem 0.5rem;
-  border-radius: 4px;
-}
-
-.contact-info a:hover {
-  color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.1);
-  text-decoration: none;
-}
-
+/* Navegación principal más compacta */
 .nav-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0.8rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 3rem;
-  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
+/* LOGO MÁS GRANDE Y RESPONSIVE */
 .logo-section {
-  display: flex;
-  align-items: center;
+  flex-shrink: 0;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
+  gap: 1rem;
   text-decoration: none;
   transition: transform 0.3s ease;
 }
 
 .logo:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
-/* LOGO PROFESIONAL Y GRANDE */
+/* Logo extra grande pero que se ajuste */
 .logo-img {
-  height: 85px; /* Tamaño profesional grande */
+  height: 100px; /* Tamaño para escritorio */
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  min-height: 100px;
   transition: all 0.3s ease;
-  min-height: 85px;
-  max-height: 100px;
 }
 
-.logo:hover .logo-img {
-  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.15));
-}
-
+/* Contenedor de texto del logo */
 .logo-text-container {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  border-left: 2px solid rgba(132, 113, 79, 0.3);
-  padding-left: 1.8rem;
+  gap: 0.2rem;
 }
 
+/* Texto del logo - más prominente */
 .logo-text {
-  font-size: 2.4rem; /* Más grande y profesional */
+  font-size: 1.8rem;
   font-weight: 800;
-  color: #2C4A35; /* Color más oscuro y elegante */
-  letter-spacing: 0.5px;
+  color: #2C4A35;
   line-height: 1;
   text-transform: uppercase;
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  background: linear-gradient(135deg, #537A5A, #2C4A35);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 .logo-subtitle {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: #84714F;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
   font-weight: 600;
+  letter-spacing: 1px;
   line-height: 1.2;
-  opacity: 0.9;
-  font-family: 'Segoe UI', sans-serif;
+  text-transform: uppercase;
 }
 
+/* ===== MENÚ DE NAVEGACIÓN RESPONSIVE ===== */
 .nav-menu {
-  list-style: none;
   display: flex;
   align-items: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
+  gap: 1.2rem;
   margin: 0;
   padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
 }
 
+/* Items de navegación */
 .nav-item {
-  display: inline-block;
   position: relative;
 }
 
+/* Enlaces de navegación - más compactos */
 .nav-link {
   color: #2C4A35;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 600;
-  font-size: 1.15rem;
-  position: relative;
-  cursor: pointer;
-  padding: 0.7rem 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-block;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
-.nav-link:hover {
-  color: #84714F;
+.nav-link:hover,
+.nav-link-active {
+  color: #537A5A;
+  background: rgba(83, 122, 90, 0.1);
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #537A5A, #84714F);
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 2px;
-}
-
-.nav-link:hover::after,
-.nav-link-active::after {
-  width: 100%;
-}
-
+/* Botón de donar */
 .btn-donate-header {
   background: linear-gradient(135deg, #537A5A, #3A5740);
-  color: #FFFFFF;
-  padding: 0.9rem 2.5rem;
-  border-radius: 10px;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
   border: none;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   text-decoration: none;
-  display: inline-block;
-  margin-left: 1.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
-  box-shadow: 0 6px 20px rgba(83, 122, 90, 0.25);
-  position: relative;
-  overflow: hidden;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.btn-donate-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.7s ease;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(83, 122, 90, 0.2);
 }
 
 .btn-donate-header:hover {
   background: linear-gradient(135deg, #84714F, #67583E);
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 30px rgba(132, 113, 79, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(132, 113, 79, 0.25);
 }
 
-.btn-donate-header:hover::before {
-  left: 100%;
+/* ===== MENÚ HAMBURGUESA PARA MÓVIL ===== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #537A5A;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
 }
 
-.btn-donate-header:active {
-  transform: translateY(-1px) scale(1.01);
-}
+/* ===== RESPONSIVE DESIGN ===== */
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .top-bar-content,
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
   .nav-container {
-    padding: 0 2rem;
+    padding: 0.7rem 1.2rem;
+    gap: 1rem;
   }
   
   .logo-img {
-    height: 75px;
+    height: 150px;
   }
   
   .logo-text {
-    font-size: 2rem;
-  }
-  
-  .nav-menu {
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .nav-container {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 1.5rem 2rem;
-  }
-  
-  .logo {
-    justify-content: center;
-    text-align: center;
-    gap: 1.5rem;
-  }
-  
-  .logo-img {
-    height: 70px;
-  }
-  
-  .logo-text-container {
-    align-items: center;
-    border-left: none;
-    padding-left: 0;
-    border-top: 2px solid rgba(132, 113, 79, 0.2);
-    padding-top: 1rem;
-    padding-left: 0;
-  }
-  
-  .logo-text {
-    font-size: 1.8rem;
-  }
-  
-  .nav-menu {
-    justify-content: center;
-    gap: 1.8rem;
-  }
-  
-  .btn-donate-header {
-    margin-left: 0;
-    margin-top: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .top-bar-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.8rem;
-    padding: 0 1.5rem;
-  }
-  
-  .logo {
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  
-  .logo-img {
-    height: 65px;
-  }
-  
-  .logo-text {
-    font-size: 1.6rem;
-    text-align: center;
+    font-size: 1.5rem;
   }
   
   .logo-subtitle {
-    font-size: 0.8rem;
-    text-align: center;
-    letter-spacing: 2px;
+    font-size: 0.65rem;
   }
   
   .nav-menu {
-    flex-direction: column;
-    gap: 1.2rem;
-    width: 100%;
+    gap: 0.8rem;
   }
   
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .btn-donate-header {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Móvil (hasta 767px) - MENÚ HAMBURGUESA */
+@media (max-width: 767px) {
+  /* Mostramos el botón hamburguesa */
+  .menu-toggle {
+    display: block;
+  }
+  
+  /* Ocultamos el top bar en móvil */
+  .top-bar {
+    display: none;
+  }
+  
+  /* Ajustamos el contenedor principal */
+  .nav-container {
+    padding: 0.6rem 1rem;
+    position: relative;
+  }
+  
+  /* Logo más compacto para móvil */
+  .logo-img {
+    height: 150px;
+    min-height: 150px;
+  }
+  
+  .logo-text {
+    font-size: 1.3rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 0.8px;
+  }
+  
+  /* Menú hamburguesa - oculto por defecto */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+    transition: right 0.4s ease;
+    z-index: 999;
+    overflow-y: auto;
+    gap: 0.5rem;
+  }
+  
+  /* Menú activo */
+  .nav-menu.active {
+    right: 0;
+  }
+  
+  /* Overlay para el menú */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+  
+  .menu-overlay.active {
+    display: block;
+  }
+  
+  /* Items del menú móvil */
   .nav-item {
     width: 100%;
-    text-align: center;
   }
   
   .nav-link {
     display: block;
-    padding: 1rem;
-    font-size: 1.1rem;
-    background: rgba(242, 226, 210, 0.1);
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
     border-radius: 8px;
-    transition: all 0.3s;
-  }
-  
-  .nav-link:hover {
-    background: rgba(242, 226, 210, 0.3);
-  }
-  
-  .nav-link::after {
-    display: none;
+    margin-bottom: 0.3rem;
   }
   
   .btn-donate-header {
     width: 100%;
     text-align: center;
-    margin-left: 0;
+    padding: 0.9rem;
     margin-top: 1rem;
-    padding: 1rem;
+    font-size: 1rem;
   }
 }
 
+/* Móvil pequeño (hasta 480px) */
 @media (max-width: 480px) {
-  .top-bar-content,
   .nav-container {
-    padding: 0 1rem;
+    padding: 0.5rem 0.8rem;
   }
   
   .logo-img {
-    height: 55px;
+    height: 150px;
   }
   
   .logo-text {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   
   .logo-subtitle {
-    font-size: 0.75rem;
-    letter-spacing: 1.5px;
+    font-size: 0.55rem;
   }
   
-  .nav-link {
-    font-size: 1rem;
-    padding: 0.9rem;
-  }
-  
-  .btn-donate-header {
-    font-size: 1rem;
-    padding: 0.9rem;
+  .nav-menu {
+    width: 250px;
+    padding: 4.5rem 1.5rem 1.5rem;
   }
 }
 
-/* Animaciones para el header */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.header {
-  animation: fadeInDown 0.5s ease-out;
-}
-
-/* Efecto de desenfoque para navegadores modernos */
-@supports (backdrop-filter: blur(10px)) {
-  .header {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.95);
+/* Para escritorio grande, mostramos top bar */
+@media (min-width: 1025px) {
+  .top-bar {
+    display: block;
   }
 }

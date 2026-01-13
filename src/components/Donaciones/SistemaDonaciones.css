@@ -1,0 +1,381 @@
+.sistema-donaciones {
+  background: white;
+  border-radius: 15px;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.donaciones-titulo {
+  color: #537A5A;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.donaciones-subtitulo {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.metodos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.metodo-card {
+  background: #F9F9F9;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.metodo-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.metodo-icon {
+  margin-bottom: 1.5rem;
+}
+
+.metodo-card h4 {
+  color: #2C4A35;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.metodo-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.btn-metodo {
+  background: #537A5A;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-metodo:hover {
+  background: #84714F;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 15px;
+  padding: 2.5rem;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+.modal-content h3 {
+  color: #537A5A;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* QR Modal */
+.qr-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.qr-code {
+  text-align: center;
+  padding: 2rem;
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.qr-placeholder {
+  padding: 1rem;
+}
+
+.qr-placeholder p {
+  margin-top: 1rem;
+  color: #666;
+}
+
+.qr-instructions h4 {
+  color: #537A5A;
+  margin-bottom: 1rem;
+}
+
+.qr-instructions ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.qr-instructions li {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.qr-note {
+  color: #84714F;
+  font-size: 0.9rem;
+  padding: 0.8rem;
+  background: #F2E2D2;
+  border-radius: 6px;
+}
+
+/* Tarjeta Form */
+.tarjeta-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2C4A35;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #537A5A;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.btn-donar-tarjeta {
+  background: linear-gradient(135deg, #537A5A, #3A5740);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-donar-tarjeta:hover {
+  background: linear-gradient(135deg, #84714F, #67583E);
+  transform: translateY(-2px);
+}
+
+.security-note {
+  text-align: center;
+  margin-top: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+}
+
+/* Bank Details Modal */
+.bank-details-modal {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.bank-info-card {
+  background: #F9F9F9;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.bank-info-card h4 {
+  color: #537A5A;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.bank-table {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-collapse: collapse;
+}
+
+.bank-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #eee;
+}
+
+.bank-table td:first-child {
+  font-weight: 600;
+  color: #2C4A35;
+  width: 40%;
+}
+
+.transfer-instructions {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #eee;
+}
+
+.transfer-instructions h5 {
+  color: #537A5A;
+  margin-bottom: 1rem;
+}
+
+.transfer-instructions ol {
+  padding-left: 1.5rem;
+}
+
+.transfer-instructions li {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.qr-bancario {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border: 2px dashed #ddd;
+}
+
+.qr-bancario h5 {
+  color: #537A5A;
+  margin-bottom: 1rem;
+}
+
+.qr-bancario-placeholder {
+  padding: 1rem;
+}
+
+.qr-bancario-placeholder p {
+  margin-top: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sistema-donaciones {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .donaciones-titulo {
+    font-size: 1.6rem;
+  }
+  
+  .metodos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .qr-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sistema-donaciones {
+    padding: 1rem;
+  }
+  
+  .donaciones-titulo {
+    font-size: 1.4rem;
+  }
+  
+  .modal-content {
+    padding: 1rem;
+  }
+}
