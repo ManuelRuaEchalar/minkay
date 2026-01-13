@@ -1,0 +1,509 @@
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Estilos para la aplicación */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utilidades */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #537A5A;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+  border: 2px solid #537A5A;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #84714F;
+  border-color: #84714F;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+/* Smooth scroll para anclas */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Ajusta según la altura del header */
+}
+
+/* Estilos para secciones */
+section {
+  scroll-margin-top: 100px; /* Para que no quede tapado por el header fijo */
+}
+/* ===== ESTILOS PARA LAS NUEVAS SECCIONES ===== */
+
+/* Secciones */
+.section {
+  padding: 80px 0;
+}
+
+.section-dark {
+  background-color: #F2E2D2;
+}
+
+.section-light {
+  background-color: #FFFFFF;
+}
+
+.donation-section {
+  background: linear-gradient(135deg, #537A5A, #84714F);
+  color: white;
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  color: #537A5A;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.donation-section .section-title {
+  color: #F2E2D2;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #84714F;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.donation-section .section-subtitle {
+  color: white;
+}
+
+/* Grids */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.objectives-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.donation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.card-content h3 {
+  color: #537A5A;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.values-list {
+  list-style: none;
+  padding: 0;
+}
+
+.values-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.values-list li:before {
+  content: "✓";
+  color: #537A5A;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Objetivos */
+.objective-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: transform 0.3s;
+}
+
+.objective-card:hover {
+  transform: translateX(10px);
+}
+
+.objective-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #537A5A;
+  min-width: 50px;
+}
+
+.objective-text {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Áreas */
+.area-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  border-top: 4px solid #537A5A;
+}
+
+.area-card:hover {
+  transform: translateY(-5px);
+}
+
+.area-icon {
+  font-size: 3rem;
+  color: #537A5A;
+  margin-bottom: 1rem;
+}
+
+.area-card h3 {
+  color: #537A5A;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Donaciones */
+.donation-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(242, 226, 210, 0.3);
+  border-radius: 15px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.donation-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-10px);
+  border-color: #F2E2D2;
+}
+
+.donation-icon {
+  margin-bottom: 1rem;
+  color: #F2E2D2;
+}
+
+.donation-card h3 {
+  color: #F2E2D2;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.donation-amount {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #F2E2D2;
+  margin: 1rem 0;
+}
+
+.donation-features {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.donation-features li {
+  padding: 0.5rem 0;
+  color: white;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.donation-features li:before {
+  content: "✓";
+  color: #F2E2D2;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.btn-donate {
+  background: #F2E2D2;
+  color: #537A5A;
+  border: none;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-donate:hover {
+  background: white;
+  color: #537A5A;
+}
+
+/* Información Bancaria */
+.bank-info {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bank-info h3 {
+  color: #F2E2D2;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.bank-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.bank-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bank-detail:last-child {
+  border-bottom: none;
+}
+
+.bank-label {
+  font-weight: bold;
+  color: #F2E2D2;
+}
+
+.bank-value {
+  color: white;
+}
+
+/* Contacto */
+.contact-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  color: #537A5A;
+  margin-bottom: 1.5rem;
+}
+
+.contact-card h3 {
+  color: #537A5A;
+  margin-bottom: 1rem;
+}
+
+.contact-card a {
+  color: #537A5A;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon {
+  color: #537A5A;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #84714F;
+}
+
+/* Footer */
+.footer {
+  background: #537A5A;
+  color: #F2E2D2;
+  padding: 60px 0 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section h3 {
+  color: #F2E2D2;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.footer-section p,
+.footer-section a {
+  color: #F2E2D2;
+  margin-bottom: 0.8rem;
+  display: block;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  font-size: 1.5rem;
+}
+
+.btn-footer {
+  background: #F2E2D2;
+  color: #537A5A;
+  border: none;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.btn-footer:hover {
+  background: white;
+  color: #537A5A;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(242, 226, 210, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+  
+  .cards-grid,
+  .areas-grid,
+  .donation-grid,
+  .contact-grid,
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .objective-card {
+    flex-direction: column;
+  }
+  
+  .objective-number {
+    font-size: 1.5rem;
+  }
+}
