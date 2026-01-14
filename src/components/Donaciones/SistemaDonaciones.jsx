@@ -74,10 +74,9 @@ const SistemaDonaciones = () => {
             <h3>Donación por QR</h3>
             <div className="qr-container">
               <div className="qr-code">
-                {/* Aquí iría tu código QR real */}
+                {/* Mostrar la imagen real del QR para donaciones */}
                 <div className="qr-placeholder">
-                  <FaQrcode size={150} />
-                  <p>Código QR MINK'AY</p>
+                  <img src="/qr_donations.jpeg" alt="QR Donaciones" className="qr-image" />
                 </div>
               </div>
               <div className="qr-instructions">
@@ -205,9 +204,9 @@ const SistemaDonaciones = () => {
                 <div className="qr-bancario">
                   <h5>QR Bancario (opcional):</h5>
                   <div className="qr-bancario-placeholder">
-                    <FaQrcode size={80} />
-                    <p>Escanea para transferencia rápida</p>
-                  </div>
+                      <img src="/qr_donations.jpeg" alt="QR Donaciones" className="qr-image small" />
+                      <p>Escanea para transferencia rápida</p>
+                    </div>
                 </div>
               </div>
             </div>

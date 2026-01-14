@@ -100,8 +100,8 @@
   padding: 2.5rem;
   max-width: 800px;
   width: 90%;
-  max-height: 90vh;
-  overflow-y: auto;
+  max-height: none;
+  overflow: visible;
   position: relative;
   animation: modalFadeIn 0.3s ease;
 }
@@ -162,6 +162,20 @@
 .qr-placeholder p {
   margin-top: 1rem;
   color: #666;
+}
+
+/* QR image sizing */
+.qr-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.qr-image.small {
+  width: 200px;
+  height: 200px;
 }
 
 .qr-instructions h4 {
@@ -354,6 +368,11 @@
   .qr-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .qr-image {
+    width: 100%;
+    height: auto;
   }
   
   .form-row {

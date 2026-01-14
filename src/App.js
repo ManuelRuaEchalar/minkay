@@ -18,9 +18,7 @@ import {
   FaFacebook,
   FaInstagram,
   FaTwitter,
-  FaHandHoldingHeart,
   FaUsers,
-  FaChartLine,
   FaGlobeAmericas,
 } from "react-icons/fa";
 import "./styles/global.css";
