@@ -4,6 +4,9 @@ import './SistemaDonaciones.css';
 
 const SistemaDonaciones = () => {
   const [modalOpen, setModalOpen] = useState(null); // 'qr', 'tarjeta', 'transferencia'
+  const [montoSeleccionado, setMontoSeleccionado] = useState('50'); // Monto por defecto
+  const [montoPersonalizado, setMontoPersonalizado] = useState(''); // Monto personalizado
+  const [mostrarCampoPersonalizado, setMostrarCampoPersonalizado] = useState(false); // Controla visibilidad
 
   const opcionesDonacion = [
     {
@@ -36,7 +39,58 @@ const SistemaDonaciones = () => {
 
   const closeModal = () => {
     setModalOpen(null);
+    setMontoSeleccionado('50'); // Resetear a valor por defecto
+    setMontoPersonalizado(''); // Limpiar campo personalizado
+    setMostrarCampoPersonalizado(false); // Ocultar campo
     document.body.style.overflow = 'auto'; // Restaurar scroll
+  };
+
+  // Manejar cambio en el select de montos
+  const handleMontoChange = (e) => {
+    const valor = e.target.value;
+    setMontoSeleccionado(valor);
+    
+    if (valor === 'otro') {
+      setMostrarCampoPersonalizado(true);
+    } else {
+      setMostrarCampoPersonalizado(false);
+      setMontoPersonalizado(''); // Limpiar campo si vuelve a montos fijos
+    }
+  };
+
+  // Manejar envío del formulario
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Determinar el monto final
+    let montoFinal;
+    if (montoSeleccionado === 'otro') {
+      montoFinal = parseFloat(montoPersonalizado);
+      
+      // Validar que sea un número y que sea mayor o igual a 6.99 Bs
+      if (isNaN(montoFinal) || montoFinal < 6.99) {
+        alert('Por favor ingresa un monto válido. El mínimo es 6.99 Bs (equivalente a 1 USD)');
+        return;
+      }
+    } else {
+      montoFinal = parseFloat(montoSeleccionado);
+    }
+    
+    // Aquí normalmente enviarías los datos al backend
+    console.log('Monto a donar:', montoFinal, 'Bs');
+    alert(`¡Gracias por tu donación de ${montoFinal} Bs!`);
+    
+    // Cerrar modal después de enviar
+    closeModal();
+  };
+
+  // Manejar cambio en el campo personalizado
+  const handleMontoPersonalizadoChange = (e) => {
+    const valor = e.target.value;
+    // Permitir solo números y un punto decimal
+    if (/^\d*\.?\d*$/.test(valor)) {
+      setMontoPersonalizado(valor);
+    }
   };
 
   return (
@@ -76,7 +130,7 @@ const SistemaDonaciones = () => {
               <div className="qr-code">
                 {/* Mostrar la imagen real del QR para donaciones */}
                 <div className="qr-placeholder">
-                  <img src="/qr_donations.jpeg" alt="QR Donaciones" className="qr-image" />
+                  <img src="/qr_donations.png" alt="QR Donaciones" className="qr-image" />
                 </div>
               </div>
               <div className="qr-instructions">
@@ -97,7 +151,7 @@ const SistemaDonaciones = () => {
         </div>
       )}
 
-      {/* Modal Tarjeta */}
+      {/* Modal Tarjeta - ACTUALIZADO */}
       {modalOpen === 'tarjeta' && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -106,38 +160,86 @@ const SistemaDonaciones = () => {
             </button>
             <h3>Donación con Tarjeta</h3>
             <div className="tarjeta-form">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label>Número de Tarjeta</label>
-                  <input type="text" placeholder="1234 5678 9012 3456" maxLength="19" />
+                  <input 
+                    type="text" 
+                    placeholder="1234 5678 9012 3456" 
+                    maxLength="19" 
+                    required 
+                  />
                 </div>
                 <div className="form-row">
                   <div className="form-group">
                     <label>Fecha de Vencimiento</label>
-                    <input type="text" placeholder="MM/AA" maxLength="5" />
+                    <input 
+                      type="text" 
+                      placeholder="MM/AA" 
+                      maxLength="5" 
+                      required 
+                    />
                   </div>
                   <div className="form-group">
                     <label>CVV</label>
-                    <input type="text" placeholder="123" maxLength="3" />
+                    <input 
+                      type="text" 
+                      placeholder="123" 
+                      maxLength="3" 
+                      required 
+                    />
                   </div>
                 </div>
                 <div className="form-group">
                   <label>Nombre en la Tarjeta</label>
-                  <input type="text" placeholder="JUAN PEREZ" />
+                  <input 
+                    type="text" 
+                    placeholder="Nombre del propietario" 
+                    required 
+                  />
                 </div>
                 <div className="form-group">
                   <label>Monto a Donar (Bs)</label>
-                  <select>
+                  <select 
+                    value={montoSeleccionado} 
+                    onChange={handleMontoChange}
+                  >
                     <option value="50">50 Bs</option>
                     <option value="100">100 Bs</option>
                     <option value="150">150 Bs</option>
                     <option value="300">300 Bs</option>
                     <option value="otro">Otro monto</option>
                   </select>
+                  
+                  {/* Campo para monto personalizado - solo visible cuando se selecciona "otro" */}
+                  {mostrarCampoPersonalizado && (
+                    <div className="monto-personalizado" style={{ marginTop: '10px' }}>
+                      <input
+                        type="text"
+                        placeholder="Ej: 25.50"
+                        value={montoPersonalizado}
+                        onChange={handleMontoPersonalizadoChange}
+                        style={{
+                          width: '100%',
+                          padding: '0.8rem 1rem',
+                          border: '2px solid #ddd',
+                          borderRadius: '8px',
+                          fontSize: '1rem'
+                        }}
+                      />
+                      <small style={{ color: '#84714F', display: 'block', marginTop: '5px' }}>
+                        <strong>Mínimo: 6.99 Bs (equivalente a 1 USD)</strong>
+                      </small>
+                    </div>
+                  )}
                 </div>
                 <div className="form-group">
                   <label>Email para recibo</label>
-                  <input type="email" placeholder="tu@email.com" />
+                  <input 
+                    type="email" 
+                    placeholder="tu@email.com" 
+                    required 
+                  />
                 </div>
                 <button type="submit" className="btn-donar-tarjeta">
                   <FaCreditCard /> Donar Ahora
@@ -204,7 +306,7 @@ const SistemaDonaciones = () => {
                 <div className="qr-bancario">
                   <h5>QR Bancario (opcional):</h5>
                   <div className="qr-bancario-placeholder">
-                      <img src="/qr_donations.jpeg" alt="QR Donaciones" className="qr-image small" />
+                      <img src="qr_donations.png" alt="QR Donaciones" className="qr-image small" />
                       <p>Escanea para transferencia rápida</p>
                     </div>
                 </div>

@@ -61,7 +61,7 @@
 
 .info-icon {
   font-size: 2rem;
-  color: #537A5A;
+  color: #ffffff;
   flex-shrink: 0;
 }
 
@@ -111,7 +111,7 @@
     padding: 1rem;
   }
 }
-.whatsapp-btn {
+/* .whatsapp-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -123,17 +123,212 @@
   font-weight: 600;
   margin-top: 0.5rem;
   transition: all 0.3s ease;
-}
+} */
 
-.whatsapp-btn:hover {
+/* .whatsapp-btn:hover {
   background: #128C7E;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-}
+} */
 
 .info-note {
   font-size: 0.85rem;
   color: #888;
   font-style: italic;
   margin-top: 0.5rem;
+}
+/* MapaContacto.css */
+.mapa-container {
+  background: white;
+  border-radius: 15px;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mapa-titulo {
+  color: #537A5A;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.mapa-direccion {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.mapa-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mapa-iframe {
+  display: block;
+}
+
+.info-contacto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.info-item {
+  background: #F9F9F9;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 4px solid #537A5A;
+}
+
+.info-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #537A5A, #3A5740);
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover .info-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, #84714F, #67583E);
+}
+
+.info-item h4 {
+  color: #2C4A35;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.info-item p {
+  color: #666;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.info-note {
+  color: #84714F;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Botón WhatsApp */
+/* .whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #537A5A, #3A5740);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+} */
+
+/* .whatsapp-btn:hover {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+} */
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mapa-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .mapa-titulo {
+    font-size: 1.6rem;
+  }
+  
+  .info-contacto {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-item {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapa-container {
+    padding: 1rem;
+  }
+  
+  .mapa-titulo {
+    font-size: 1.4rem;
+  }
+  
+  .mapa-direccion {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* MapaContacto.css - Botón WhatsApp con texto siempre blanco */
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #537a5a; /* Verde de la fundación */
+  color: white !important; /* FORZAR texto blanco */
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+  font-family: inherit; /* Heredar fuente del body */
+}
+
+.whatsapp-btn:hover {
+  background: #73ae82; /* Verde más claro al hover */
+  color: white !important; /* FORZAR texto blanco en hover también */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(115, 174, 130, 0.3); /* Sombra verde suave */
+}
+
+/* También asegurar que el ícono sea blanco */
+.whatsapp-btn svg {
+  color: white !important;
+  fill: white !important;
 }

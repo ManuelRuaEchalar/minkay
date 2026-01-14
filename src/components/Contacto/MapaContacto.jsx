@@ -1,5 +1,5 @@
 import React from "react";
-import { FaMapMarkerAlt, FaClock, FaWhatsapp } from "react-icons/fa";
+import { FaMapMarkerAlt, FaClock, FaWhatsapp, FaCalendarAlt } from "react-icons/fa";
 import "./MapaContacto.css";
 
 const MapaContacto = () => {
@@ -56,19 +56,6 @@ const MapaContacto = () => {
               className="whatsapp-btn"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                background: "#537a5a",
-                color: "white",
-                padding: "0.8rem 1.5rem",
-                borderRadius: "8px",
-                textDecoration: "none",
-                fontWeight: "600",
-                marginTop: "0.5rem",
-                transition: "all 0.3s ease",
-              }}
             >
               <FaWhatsapp /> Escribir por WhatsApp
             </a>
@@ -77,7 +64,9 @@ const MapaContacto = () => {
         </div>
 
         <div className="info-item">
-          <span className="info-icon">📅</span>
+          <span className="info-icon">
+            <FaCalendarAlt />
+          </span>
           <div>
             <h4>Visitas Programadas</h4>
             <p>Para visitar nuestros proyectos</p>

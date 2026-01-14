@@ -9,19 +9,22 @@ const HeroSlider = () => {
       title: "Fundación MINK'AY",
       subtitle: "Reduciendo la pobreza con soluciones sostenibles e innovadoras",
       buttonText: "Apoyanos",
-      buttonLink: "#donaciones"
+      buttonLink: "#donaciones",
+      image: process.env.PUBLIC_URL + "/images/fundacionminkay.jpeg"
     },
     {
       title: "Seguridad Alimentaria",
       subtitle: "Acceso a alimentos nutritivos para comunidades vulnerables",
       buttonText: "Conoce Más",
-      buttonLink: "#areas"
+      buttonLink: "#areas",
+      image: process.env.PUBLIC_URL + "/images/seguridadAlimentariaimg.jpg"
     },
     {
       title: "Hidroponía Sostenible",
       subtitle: "Tecnología innovadora para optimizar el uso del agua",
       buttonText: "Ver Proyectos",
-      buttonLink: "#areas"
+      buttonLink: "#areas",
+      image: process.env.PUBLIC_URL + "/images/hidroponia.jpg"
     }
   ];
 
@@ -44,9 +47,11 @@ const HeroSlider = () => {
           key={index}
           className={`slide ${index === currentSlide ? 'active' : ''}`}
           style={{ 
-            background: index === 0 ? 'linear-gradient(135deg, #537A5A, #84714F)' :
-                      index === 1 ? 'linear-gradient(135deg, #84714F, #537A5A)' :
-                      'linear-gradient(135deg, #537A5A, #3A5740)'
+            backgroundImage: `linear-gradient(rgba(83, 122, 90, 0.7), rgba(132, 113, 79, 0.7)), url(${slide.image})`,
+            // IMPORTANTE: Esto ajusta la imagen para cubrir el área
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat'
           }}
         >
           <div className="slide-content">

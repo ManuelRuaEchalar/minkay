@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiMail, FiMapPin } from 'react-icons/fi';
+import { FaHandHoldingHeart } from 'react-icons/fa';
 import MinkayLogo from '../../assets/images/MinkayLogo.png';
 import './Header.css';
 
@@ -40,12 +41,14 @@ const Header = () => {
       <div className="top-bar">
         <div className="container top-bar-content">
           <div className="location-info">
-            <span className="location-icon">📍</span>
+            <FiMapPin className="icon" size={16} />
             <span>La Paz 562, Sucre - Chuquisaca, Bolivia</span>
           </div>
           <div className="contact-info">
-            <span className="email-icon">📧</span>
-            <a href="mailto:contacto@minkay.org">contacto@minkay.org</a>
+            <FiMail className="icon" size={16} />
+            <a href="mailto:contacto@minkay.org" className="email-link">
+              contacto@minkay.org
+            </a>
           </div>
         </div>
       </div>
@@ -104,7 +107,8 @@ const Header = () => {
                 className="btn btn-donate-header"
                 onClick={handleNavClick}
               >
-                DONAR
+                <FaHandHoldingHeart className="donate-icon" />
+                <span>DONAR</span>
               </Link>
             </li>
           </ul>

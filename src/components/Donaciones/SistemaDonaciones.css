@@ -24,6 +24,9 @@
   margin-right: auto;
 }
 
+/* ================================
+   SECCIÓN DE MÉTODOS DE DONACIÓN
+   ================================ */
 .metodos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -39,6 +42,11 @@
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  /* ARREGLAR ALINEACIÓN: todas las cards iguales */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-top: 4px solid; /* El color se define inline en el JSX */
 }
 
 .metodo-card:hover {
@@ -49,18 +57,21 @@
 
 .metodo-icon {
   margin-bottom: 1.5rem;
+  flex-shrink: 0;
 }
 
 .metodo-card h4 {
   color: #2C4A35;
   margin-bottom: 1rem;
   font-size: 1.3rem;
+  flex: 1;
 }
 
 .metodo-card p {
   color: #666;
   margin-bottom: 1.5rem;
   line-height: 1.5;
+  flex: 1;
 }
 
 .btn-metodo {
@@ -73,13 +84,16 @@
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
+  margin-top: auto; /* Empuja el botón hacia abajo para alinear */
 }
 
 .btn-metodo:hover {
   background: #84714F;
 }
 
-/* Modal Styles */
+/* ================================
+   ESTILOS MODALES (comunes)
+   ================================ */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -140,7 +154,9 @@
   font-size: 1.8rem;
 }
 
-/* QR Modal */
+/* ================================
+   MODAL QR - CENTRADO CORREGIDO
+   ================================ */
 .qr-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -157,25 +173,27 @@
 
 .qr-placeholder {
   padding: 1rem;
+  /* CENTRAR EL QR: */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.qr-placeholder p {
-  margin-top: 1rem;
-  color: #666;
-}
-
-/* QR image sizing */
+/* IMAGEN QR CENTRADA Y CON TAMAÑO FIJO */
 .qr-image {
-  width: 200px;
-  height: 200px;
+  width: 280px; /* Tamaño ajustado */
+  height: 280px; /* Cuadrado perfecto */
   object-fit: contain;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto; /* Centrado horizontal */
+  border-radius: 8px;
 }
 
 .qr-image.small {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto; /* También centrado */
 }
 
 .qr-instructions h4 {
@@ -201,7 +219,9 @@
   border-radius: 6px;
 }
 
-/* Tarjeta Form */
+/* ================================
+   MODAL TARJETA
+   ================================ */
 .tarjeta-form {
   max-width: 500px;
   margin: 0 auto;
@@ -271,7 +291,9 @@
   padding: 0.5rem;
 }
 
-/* Bank Details Modal */
+/* ================================
+   MODAL TRANSFERENCIA BANCARIA
+   ================================ */
 .bank-details-modal {
   max-width: 600px;
   margin: 0 auto;
@@ -342,6 +364,11 @@
 
 .qr-bancario-placeholder {
   padding: 1rem;
+  /* CENTRAR EL QR PEQUEÑO: */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .qr-bancario-placeholder p {
@@ -350,7 +377,9 @@
   font-size: 0.9rem;
 }
 
-/* Responsive */
+/* ================================
+   RESPONSIVE
+   ================================ */
 @media (max-width: 768px) {
   .sistema-donaciones {
     padding: 1.5rem;
@@ -372,6 +401,7 @@
 
   .qr-image {
     width: 100%;
+    max-width: 280px; /* Mantiene proporción en móviles */
     height: auto;
   }
   
@@ -397,4 +427,107 @@
   .modal-content {
     padding: 1rem;
   }
+  
+  .qr-image {
+    max-width: 250px;
+  }
+}
+/* Agrega al final de tu archivo CSS */
+.monto-personalizado {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.monto-personalizado input:focus {
+  outline: none;
+  border-color: #537A5A;
+}
+
+.monto-personalizado small {
+  font-size: 0.85rem;
+}
+/* ================================
+   SISTEMA DONACIONES RESPONSIVE
+   ================================ */
+
+.sistema-donaciones {
+  background: white;
+  border-radius: 15px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  margin: clamp(1rem, 3vw, 2rem) auto;
+  max-width: 1200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.donaciones-titulo {
+  color: #537A5A;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.donaciones-subtitulo {
+  text-align: center;
+  color: #666;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+/* Métodos de donación */
+.metodo-card {
+  border-top: 4px solid;
+  cursor: pointer;
+  text-align: center;
+}
+
+.metodo-icon {
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+  font-size: 3rem;
+}
+
+.metodo-card h4 {
+  color: #2C4A35;
+  margin-bottom: 1rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  flex: 1;
+}
+
+.metodo-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.btn-metodo {
+  background: #537A5A;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: auto;
+  min-height: 44px;
+}
+
+.btn-metodo:hover {
+  background: #84714F;
 }
