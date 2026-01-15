@@ -445,10 +445,10 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
                   desarrollo territorial sostenible.
                 </p>
                 <div className="impact-stats">
-                  <div className="stat-item">
+                  {/* <div className="stat-item">
                     <span className="stat-number">20,900+</span>
                     <span className="stat-label">Estudiantes beneficiados</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -526,7 +526,7 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
 
           <div className="impact-container" style={{ marginTop: "3rem" }}>
             <h3 style={{ textAlign: "center", color: "#537A5A", marginBottom: "2rem" }}>
-              Nuestro Impacto en Números
+              ¿Cuál sería nuestro impacto?
             </h3>
             <div className="impact-grid">
               <div className="impact-card">
@@ -795,7 +795,7 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
               <h3>Correo Electrónico</h3>
               <p>
                 <a href="mailto:contacto@minkay.org" className="contact-link">
-                  contacto@minkay.org
+                  Contacto@minkay.org
                 </a>
               </p>
               <p>Responderemos tu mensaje en menos de 24 horas</p>
@@ -807,8 +807,8 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
               </div>
               <h3>Teléfono</h3>
               <p>
-                <a href="tel:+59112345678" className="contact-link">
-                  +591 1234 5678
+                <a href="tel:+59174536806" className="contact-link">
+                  +591 74536806
                 </a>
               </p>
               <p>Lunes a Viernes de 8:00 a 18:00</p>
@@ -882,9 +882,7 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
             <div className="footer-section">
               <h3>Nuestro Impacto</h3>
               <p className="footer-impact">✓ Familias beneficiadas</p>
-              <p className="footer-impact">
-                ✓ Sistemas hidropónicos instalados
-              </p>
+              <p className="footer-impact">✓ Sistemas hidropónicos instalados</p>
               <p className="footer-impact">✓ Capacitaciones realizadas</p>
               <p className="footer-impact">✓ Comunidades alcanzadas</p>
             </div>

@@ -531,3 +531,119 @@
 .btn-metodo:hover {
   background: #84714F;
 }
+/* ===== MODAL QR RESPONSIVE ARREGLADO ===== */
+.qr-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: center;
+}
+
+/* IMAGEN QR - TAMAÑO CONTROLADO Y RESPONSIVE */
+.qr-image {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  aspect-ratio: 1/1; /* Mantiene proporción cuadrada */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 2px solid #f0f0f0;
+}
+
+.qr-placeholder {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* INSTRUCCIONES RESPONSIVE */
+.qr-instructions h4 {
+  color: #537A5A;
+  margin-bottom: 1rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.qr-instructions ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.qr-instructions li {
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.4;
+}
+
+/* MODAL RESPONSIVE */
+.modal-content {
+  background: white;
+  border-radius: 15px;
+  padding: clamp(1.2rem, 3vw, 2.5rem);
+  max-width: min(800px, 95vw);
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalFadeIn 0.3s ease;
+}
+
+/* ===== RESPONSIVE PARA MODAL QR ===== */
+@media (max-width: 768px) {
+  .qr-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .qr-image {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+  .qr-instructions {
+    text-align: left;
+  }
+  
+  .qr-instructions ol {
+    padding-left: 1.2rem;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+    width: 95%;
+    max-height: 85vh;
+  }
+  
+  .modal-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .qr-image {
+    max-width: 200px;
+  }
+  
+  .modal-content {
+    padding: 1.2rem;
+    width: 98%;
+    border-radius: 12px;
+  }
+  
+  .modal-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.3rem;
+  }
+  
+  .qr-instructions li {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+}

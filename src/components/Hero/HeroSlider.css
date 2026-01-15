@@ -1,101 +1,17 @@
-.hero-slider {
-  position: relative;
-  height: 600px;
-  overflow: hidden;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-.slide-content {
-  max-width: 800px;
-  padding: 2rem;
-  z-index: 1;
-}
-
-.slide-content h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.slide-content p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: white;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-.slider-nav {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 1rem;
-  z-index: 10;
-}
-
-.slider-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  padding: 0;
-}
-
-.slider-dot.active {
-  background: #F2E2D2;
-  transform: scale(1.3);
-}
-
-.slider-dot:hover {
-  background: rgba(255,255,255,0.8);
-}
-
-@media (max-width: 768px) {
-  .hero-slider {
-    height: 400px;
-  }
-  
-  .slide-content h1 {
-    font-size: 2rem;
-  }
-  
-  .slide-content p {
-    font-size: 1rem;
-  }
-}
 /* ================================
-   HERO SLIDER RESPONSIVE
+   HERO SLIDER - VERSIÓN AJUSTADA AL 90%
    ================================ */
 
 .hero-slider {
   position: relative;
-  height: clamp(400px, 50vh, 600px);
+  width: 100%;
+  height: 90vh; /* 90% de la altura de la página */
+  max-height: 700px; /* Límite máximo */
+  min-height: 300px; /* Límite mínimo en móvil */
   overflow: hidden;
 }
 
+/* Slides - Reducido al 90% */
 .slide {
   position: absolute;
   top: 0;
@@ -109,228 +25,19 @@
   justify-content: center;
   text-align: center;
   color: white;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-.slide-content {
-  max-width: min(800px, 90vw);
-  padding: clamp(1rem, 3vw, 2rem);
-  z-index: 1;
-}
-
-.slide-content h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  margin-bottom: 1rem;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  line-height: 1.2;
-}
-
-.slide-content p {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  margin-bottom: clamp(1rem, 3vw, 2rem);
-  color: white;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-.slider-nav {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.75rem;
-  z-index: 10;
-}
-
-.slider-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  padding: 0;
-  min-width: 12px;
-  min-height: 12px;
-}
-
-.slider-dot.active {
-  background: #F2E2D2;
-  transform: scale(1.3);
-}
-.hero-slider {
-  position: relative;
-  height: clamp(400px, 60vh, 600px);
-  overflow: hidden;
-  width: 100%;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-.slide-content {
-  max-width: min(800px, 90vw);
-  padding: clamp(1rem, 3vw, 2rem);
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-  backdrop-filter: blur(2px);
-}
-
-.slide-content h1 {
-  font-size: clamp(1.8rem, 5vw, 3.2rem);
-  margin-bottom: 1rem;
-  color: white;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-  line-height: 1.2;
-  font-weight: 800;
-}
-
-.slide-content p {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  margin-bottom: clamp(1.5rem, 3vw, 2rem);
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.slide-content .btn {
-  background: #F2E2D2;
-  color: #537A5A;
-  border: none;
-  padding: 0.8rem 2rem;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
-
-.slide-content .btn:hover {
-  background: white;
-  color: #3A5740;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.slider-nav {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.75rem;
-  z-index: 10;
-}
-
-.slider-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  padding: 0;
-}
-
-.slider-dot.active {
-  background: #F2E2D2;
-  transform: scale(1.3);
-}
-
-.slider-dot:hover {
-  background: rgba(255,255,255,0.8);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-slider {
-    height: clamp(350px, 50vh, 450px);
-  }
   
-  .slide-content {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-slider {
-    height: 300px;
-  }
-  
-  .slide-content {
-    padding: 1rem;
-  }
-  
-  .slide-content h1 {
-    font-size: 1.5rem;
-  }
-  
-  .slide-content p {
-    font-size: 0.9rem;
-  }
-}
-/* HeroSlider.css - Versión corregida */
-.hero-slider {
-  position: relative;
-  height: clamp(400px, 60vh, 600px);
-  overflow: hidden;
-  width: 100%;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  /* ESTAS PROPIEDADES SON CLAVE */
+  /* IMAGEN DE FONDO - SIN ZOOM EXCESIVO */
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
-  /* Asegura que cubra todo el contenedor */
-  background-attachment: scroll;
+  background-color: #45674c; /* Color de respaldo (#45674c) */
 }
 
 .slide.active {
   opacity: 1;
 }
 
-/* Overlay para mejorar legibilidad del texto */
+/* Overlay con color #45674c transparente */
 .slide::before {
   content: '';
   position: absolute;
@@ -338,72 +45,94 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.3) 100%
-  );
+  
+  /* COLOR #45674c CON TRANSPARENCIA (45 = 27% opacidad en hexadecimal) */
+  background: rgba(69, 103, 76, 0.4); /* #45674c con 40% opacidad */
   z-index: 1;
 }
 
+/* CONTENEDOR DEL TEXTO CON COLOR #45674c TRANSPARENTE */
 .slide-content {
-  max-width: min(800px, 90vw);
-  padding: clamp(1.5rem, 4vw, 2.5rem);
+  max-width: 800px;
+  width: 90%; /* Ocupa el 90% del ancho disponible */
+  padding: 2.5rem 3rem;
   z-index: 2;
   position: relative;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  backdrop-filter: blur(3px);
+  
+  /* COLOR #45674c CON TRANSPARENCIA - MENOS OSCURO */
+  background: rgba(69, 103, 76, 0.85); /* #45674c con 85% opacidad */
+  border-radius: 12px;
+  
+  /* Centrado */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  /* Sombra sutil */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  
+  /* Borde sutil */
   border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Ajuste para que no se vea tan grande */
+  transform: scale(0.95); /* Reducido al 95% de su tamaño */
 }
 
+/* Título - REDUCIDO */
 .slide-content h1 {
-  font-size: clamp(1.8rem, 5vw, 3.2rem);
-  margin-bottom: 1rem;
+  font-size: 2.5rem; /* Reducido de 3rem */
+  margin-bottom: 0.75rem;
   color: white;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
   line-height: 1.2;
-  font-weight: 800;
+  font-weight: 700; /* Reducido de 800 */
+  text-align: center;
 }
 
+/* Subtítulo - REDUCIDO */
 .slide-content p {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  font-size: 1.1rem; /* Reducido de 1.3rem */
+  margin-bottom: 1.75rem;
   color: rgba(255, 255, 255, 0.95);
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  line-height: 1.4; /* Reducido de 1.5 */
+  max-width: 550px; /* Reducido de 600px */
+  text-align: center;
 }
 
+/* Botón - AJUSTADO */
 .slide-content .btn {
   background: linear-gradient(135deg, #F2E2D2, #e8d4bc);
-  color: #537A5A;
+  color: #45674c; /* Color del botón ajustado al tema */
   border: none;
-  padding: 0.9rem 2.5rem;
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
-  font-weight: 700;
+  padding: 0.9rem 2.2rem; /* Reducido ligeramente */
+  font-size: 1rem; /* Reducido de 1.1rem */
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   transition: all 0.3s ease;
   border-radius: 8px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  min-height: 46px; /* Reducido de 48px */
+  cursor: pointer;
 }
 
 .slide-content .btn:hover {
   background: white;
   color: #3A5740;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
 }
 
+/* Navegación por puntos */
 .slider-nav {
   position: absolute;
-  bottom: 25px;
+  bottom: 25px; /* Subido ligeramente */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -412,8 +141,8 @@
 }
 
 .slider-dot {
-  width: 12px;
-  height: 12px;
+  width: 10px; /* Reducido de 12px */
+  height: 10px; /* Reducido de 12px */
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -425,87 +154,219 @@
 .slider-dot.active {
   background: #F2E2D2;
   border-color: #F2E2D2;
-  transform: scale(1.3);
+  transform: scale(1.2); /* Reducido de 1.3 */
 }
 
 .slider-dot:hover {
-  background: rgba(255, 255, 255, 0.8);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
 }
 
-/* Responsive */
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+/* TABLETS (768px o menos) */
 @media (max-width: 768px) {
   .hero-slider {
-    height: clamp(350px, 50vh, 450px);
+    height: 85vh; /* 85% en tablet */
+    max-height: 500px;
   }
   
   .slide-content {
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem 2.5rem;
+    width: 92%; /* Un poco más ancho en tablet */
+    transform: scale(0.98); /* Casi tamaño normal */
+    background: rgba(69, 103, 76, 0.9); /* Más opaco en móvil */
   }
   
   .slide-content h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem; /* Ajustado para tablet */
   }
   
   .slide-content p {
     font-size: 1rem;
+    max-width: 500px;
+  }
+  
+  .slide-content .btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.95rem;
+  }
+  
+  .slider-nav {
+    bottom: 20px;
   }
 }
 
+/* MÓVILES (480px o menos) */
 @media (max-width: 480px) {
   .hero-slider {
-    height: 100px;
+    height: 80vh; /* 80% en móvil */
+    min-height: 280px;
+    max-height: 400px;
   }
   
   .slide-content {
-    padding: 1.25rem;
-    margin: 0 1rem;
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+    width: 95%; /* Más ancho en móvil */
+    transform: scale(1); /* Tamaño normal en móvil */
+    background: rgba(69, 103, 76, 0.95); /* Casi sólido en móvil pequeño */
   }
   
   .slide-content h1 {
     font-size: 1.4rem;
+    margin-bottom: 0.5rem;
   }
   
   .slide-content p {
     font-size: 0.9rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
   }
   
   .slide-content .btn {
-    padding: 0.75rem 1.5rem;
+    padding: 0.7rem 1.5rem;
     font-size: 0.9rem;
+    min-height: 42px;
   }
   
   .slider-nav {
     bottom: 15px;
-  }
-}
-
-/* Si la imagen aún se ve muy grande o cortada, prueba esto: */
-@media (max-width: 50px) {
-  .slide {
-    background-position: center center !important;
-    background-size: cover !important;
-  }
-}
-
-/* Para imágenes verticales */
-@media (orientation: portrait) {
-  .slide {
-    background-size: cover !important;
-    background-position: center center !important;
-  }
-}
-
-/* Para imágenes horizontales */
-@media (orientation: landscape) and (max-height: 400px) {
-  .hero-slider {
-    height: 100vh;
+    gap: 0.6rem;
   }
   
-  .slide {
-    background-size: cover !important;
-    background-position: center center !important;
+  .slider-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* MÓVILES MUY PEQUEÑOS (375px o menos) */
+@media (max-width: 375px) {
+  .hero-slider {
+    height: 75vh;
+    min-height: 250px;
+  }
+  
+  .slide-content {
+    padding: 1.25rem;
+  }
+  
+  .slide-content h1 {
+    font-size: 1.2rem;
+  }
+  
+  .slide-content p {
+    font-size: 0.85rem;
+  }
+  
+  .slide-content .btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* TABLETS GRANDES (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-slider {
+    height: 88vh;
+    max-height: 600px;
+  }
+  
+  .slide-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .slide-content p {
+    font-size: 1.05rem;
+  }
+}
+
+/* ESCRITORIO GRANDE (más de 1200px) */
+@media (min-width: 1200px) {
+  .hero-slider {
+    height: 90vh;
+    max-height: 750px;
+  }
+  
+  .slide-content h1 {
+    font-size: 2.8rem; /* Un poco más grande que en desktop normal */
+  }
+  
+  .slide-content p {
+    font-size: 1.2rem;
+  }
+  
+  .slide-content {
+    transform: scale(0.98); /* Un poco más grande en pantallas grandes */
+  }
+}
+
+/* ================================
+   AJUSTES ESPECIALES PARA EL ZOOM
+   ================================ */
+
+/* Si las imágenes aún se ven con mucho zoom */
+.slide.zoom-ajustado {
+  background-size: 100% auto !important; /* Ajusta ancho al 100%, altura automática */
+  background-position: center 30% !important; /* Enfoca en la parte superior de la imagen */
+}
+
+/* Para imágenes que deben verse completas */
+.slide.imagen-completa {
+  background-size: contain !important;
+  background-color: #45674c; /* Color de fondo para espacios vacíos */
+}
+
+/* ================================
+   AJUSTE DEL COMPONENTE JSX
+   ================================ */
+
+/* NOTA: En tu componente HeroSlider.js, cambia el gradiente: */
+/*
+  style={{
+    backgroundImage: `url(${slide.image})`, // SIN GRADIENTE
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+    backgroundRepeat: "no-repeat",
+  }}
+*/
+
+/* El overlay con color #45674c ya se aplica con ::before */
+
+/* ================================
+   CLASES UTILITARIAS PARA TEST
+   ================================ */
+
+/* Para debug */
+.debug .hero-slider {
+  outline: 2px dashed red;
+}
+
+.debug .slide-content {
+  outline: 2px dashed blue;
+}
+
+/* Para mostrar límites de viewport */
+.viewport-test::after {
+  content: '90vh';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 3px;
+  z-index: 1000;
+}
+/* ===== BOTÓN HAMBURGUESA MÓVIL - SOLO ESTO ===== */
+@media (max-width: 767px) {
+  .menu-toggle {
+    position: absolute; /* SOLO ESTE CAMBIO */
+    right: 1rem; /* SOLO ESTE CAMBIO */
+    top: 50%; /* SOLO ESTE CAMBIO */
+    transform: translateY(-50%); /* SOLO ESTE CAMBIO */
   }
 }

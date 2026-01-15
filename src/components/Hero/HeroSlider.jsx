@@ -1,31 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import './HeroSlider.css';
+import React, { useState, useEffect } from "react";
+import "./HeroSlider.css";
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+
   const slides = [
     {
       title: "Fundación MINK'AY",
-      subtitle: "Reduciendo la pobreza con soluciones sostenibles e innovadoras",
+      subtitle:
+        "Reduciendo la pobreza con soluciones sostenibles e innovadoras",
       buttonText: "Apoyanos",
       buttonLink: "#donaciones",
-      image: process.env.PUBLIC_URL + "/images/fundacionminkay.jpeg"
+      image: process.env.PUBLIC_URL + "/images/fundacionminkay.jpeg",
     },
     {
       title: "Seguridad Alimentaria",
       subtitle: "Acceso a alimentos nutritivos para comunidades vulnerables",
       buttonText: "Conoce Más",
       buttonLink: "#areas",
-      image: process.env.PUBLIC_URL + "/images/seguridadAlimentariaimg.jpg"
+      image: process.env.PUBLIC_URL + "/images/seguridadAlimentariaimg.jpg",
     },
     {
       title: "Hidroponía Sostenible",
       subtitle: "Tecnología innovadora para optimizar el uso del agua",
       buttonText: "Ver Proyectos",
       buttonLink: "#areas",
-      image: process.env.PUBLIC_URL + "/images/hidroponia.jpg"
-    }
+      image: process.env.PUBLIC_URL + "/images/hidroponia.jpg",
+    },
   ];
 
   useEffect(() => {
@@ -43,15 +44,15 @@ const HeroSlider = () => {
   return (
     <div className="hero-slider">
       {slides.map((slide, index) => (
+        // En tu HeroSlider.js, actualiza el estilo del slide:
         <div
           key={index}
-          className={`slide ${index === currentSlide ? 'active' : ''}`}
-          style={{ 
-            backgroundImage: `linear-gradient(rgba(83, 122, 90, 0.7), rgba(132, 113, 79, 0.7)), url(${slide.image})`,
-            // IMPORTANTE: Esto ajusta la imagen para cubrir el área
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center',
-            backgroundRepeat: 'no-repeat'
+          className={`slide ${index === currentSlide ? "active" : ""}`}
+          style={{
+            backgroundImage: `url(${slide.image})`, // SIN GRADIENTE - el overlay está en el CSS
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
           }}
         >
           <div className="slide-content">
@@ -63,12 +64,12 @@ const HeroSlider = () => {
           </div>
         </div>
       ))}
-      
+
       <div className="slider-nav">
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`slider-dot ${index === currentSlide ? 'active' : ''}`}
+            className={`slider-dot ${index === currentSlide ? "active" : ""}`}
             onClick={() => goToSlide(index)}
           />
         ))}
