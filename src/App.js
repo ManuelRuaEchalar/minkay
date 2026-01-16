@@ -33,7 +33,7 @@ import {
   FaAppleAlt,
   FaSun,
   FaIndustry,
-  FaTree
+  FaTree,
 } from "react-icons/fa";
 import "./styles/global.css";
 
@@ -46,64 +46,73 @@ function App() {
       id: 1,
       number: "01",
       title: "Seguridad Alimentaria y Nutrición",
-      
-      description: "Garantizar el acceso permanente a alimentos nutritivos para estudiantes y familias rurales de Chuquisaca.",
+
+      description:
+        "Garantizar el acceso permanente a alimentos nutritivos para estudiantes y familias rurales de Chuquisaca.",
       icon: <FaAppleAlt />,
     },
     {
       id: 2,
       number: "02",
       title: "Producción Hidropónica y Agricultura Sostenible",
-      description: "Implementar sistemas hidropónicos con energía solar para producción agrícola sostenible y eficiente.",
+      description:
+        "Implementar sistemas hidropónicos con energía solar para producción agrícola sostenible y eficiente.",
       icon: <FaSun />,
     },
     {
       id: 3,
       number: "03",
       title: "Agroindustria / Agronegocios",
-      description: "Desarrollar cadenas de valor para plantas aromáticas, medicinales y culinarias con enfoque de mercado.",
+      description:
+        "Desarrollar cadenas de valor para plantas aromáticas, medicinales y culinarias con enfoque de mercado.",
       icon: <FaIndustry />,
     },
     {
       id: 4,
       number: "04",
       title: "Economía Ambiental y Ecológica",
-      description: "Proteger bosques nativos mediante educación ambiental y alternativas económicas sostenibles.",
+      description:
+        "Proteger bosques nativos mediante educación ambiental y alternativas económicas sostenibles.",
       icon: <FaTree />,
     },
     {
       id: 5,
       number: "05",
       title: "Desarrollo Comunitario",
-      description: "Fortalecer capacidades locales para la autogestión y el emprendimiento productivo en comunidades.",
+      description:
+        "Fortalecer capacidades locales para la autogestión y el emprendimiento productivo en comunidades.",
       icon: <FaUsers />,
     },
     {
       id: 6,
       number: "06",
       title: "Educación Ambiental",
-      description: "Promover educación ambiental y nutricional en niños, jóvenes y mujeres de zonas rurales.",
+      description:
+        "Promover educación ambiental y nutricional en niños, jóvenes y mujeres de zonas rurales.",
       icon: <FaBook />,
     },
     {
       id: 7,
       number: "07",
       title: "Alianzas Estratégicas",
-      description: "Establecer alianzas con instituciones para ampliar el impacto de nuestros programas.",
+      description:
+        "Establecer alianzas con instituciones para ampliar el impacto de nuestros programas.",
       icon: <FaGlobeAmericas />,
     },
     {
       id: 8,
       number: "08",
       title: "Transparencia",
-      description: "Gestionar donaciones de manera transparente garantizando que los recursos lleguen a quienes más lo necesitan.",
+      description:
+        "Gestionar donaciones de manera transparente garantizando que los recursos lleguen a quienes más lo necesitan.",
       icon: <FaRecycle />,
     },
     {
       id: 9,
       number: "09",
       title: "Gestión Hídrica",
-      description: "Promover el uso responsable del agua mediante tecnologías de ahorro y prácticas sostenibles.",
+      description:
+        "Promover el uso responsable del agua mediante tecnologías de ahorro y prácticas sostenibles.",
       icon: <FaWater />,
     },
   ];
@@ -112,7 +121,8 @@ function App() {
     {
       id: 1,
       title: "Seguridad Alimentaria y Nutrición",
-      description: "Programa de alimentación complementaria y seguridad alimentaria escolar",
+      description:
+        "Programa de alimentación complementaria y seguridad alimentaria escolar",
       detailedDescription: `Nuestro programa integral de seguridad alimentaria y nutrición incluye:
 
 Componentes principales:
@@ -153,9 +163,11 @@ Componentes principales:
         "/areas/alimentacion-2.jpg",
         "/areas/alimentacion-3.jpg",
       ],
-      beneficiaries: "20,900 estudiantes y sus familias en 120 escuelas rurales",
+      beneficiaries:
+        "20,900 estudiantes y sus familias en 120 escuelas rurales",
       impact: "20,900 estudiantes con alimentación garantizada diariamente",
-      methodology: "Enfoque participativo con diagnóstico nutricional comunitario",
+      methodology:
+        "Enfoque participativo con diagnóstico nutricional comunitario",
       budget: "Bs. 2,500,000 anuales para programa completo",
       icon: <FaAppleAlt />,
       color: "#537A5A",
@@ -163,7 +175,8 @@ Componentes principales:
     {
       id: 2,
       title: "Producción Hidropónica y Agricultura Sostenible",
-      description: "Integración de energía solar fotovoltaica en sistemas NFT para producción sostenible",
+      description:
+        "Integración de energía solar fotovoltaica en sistemas NFT para producción sostenible",
       detailedDescription: `Innovación tecnológica al servicio de la agricultura familiar:
 
 **Proyecto Revolucionario:**
@@ -209,7 +222,8 @@ Sistemas NFT (Nutrient Film Technique) alimentados 100% con energía solar fotov
         "/areas/hidroponia-2.jpg",
         "/areas/hidroponia-3.jpg",
       ],
-      beneficiaries: "Agricultores familiares, escuelas técnicas, emprendedores rurales",
+      beneficiaries:
+        "Agricultores familiares, escuelas técnicas, emprendedores rurales",
       impact: "15 sistemas solares-hidropónicos produciendo todo el año",
       methodology: "Transferencia tecnológica con enfoque aprender haciendo",
       budget: "Bs. 25,000 por sistema completo (incluye capacitación)",
@@ -219,7 +233,8 @@ Sistemas NFT (Nutrient Film Technique) alimentados 100% con energía solar fotov
     {
       id: 3,
       title: "Agroindustria / Agronegocios",
-      description: "Cadena de valor de plantas aromáticas, medicinales y culinarias (PAMC)",
+      description:
+        "Cadena de valor de plantas aromáticas, medicinales y culinarias (PAMC)",
       detailedDescription: `Transformando tradición en oportunidad económica:
 
 **Especies Priorizadas:**
@@ -269,7 +284,8 @@ Impacto Económico:
         "/areas/agroindustria-2.jpg",
         "/areas/agroindustria-3.jpg",
       ],
-      beneficiaries: "Pequeños productores, mujeres rurales, comunidades indígenas",
+      beneficiaries:
+        "Pequeños productores, mujeres rurales, comunidades indígenas",
       impact: "120 familias incrementaron sus ingresos en 200%",
       methodology: "Desarrollo de cadena de valor con enfoque de mercado",
       budget: "Bs. 450,000 por cadena de valor completa",
@@ -279,7 +295,8 @@ Impacto Económico:
     {
       id: 4,
       title: "Economía Ambiental y Ecológica",
-      description: "Tierra Viva - Protección de bosques nativos y desarrollo de alternativas económicas sostenibles",
+      description:
+        "Tierra Viva - Protección de bosques nativos y desarrollo de alternativas económicas sostenibles",
       detailedDescription: `"Las verdaderas guardianas y guardianes de nuestros bosques son quienes los habitan"
 
 Programa Tierra Viva:
@@ -327,9 +344,11 @@ Logros de Conservación:
         "/areas/tierra-viva-2.jpg",
         "/areas/tierra-viva-3.jpg",
       ],
-      beneficiaries: "Comunidades indígenas, familias forestales, jóvenes rurales",
+      beneficiaries:
+        "Comunidades indígenas, familias forestales, jóvenes rurales",
       impact: "5,000 hectáreas de bosque nativo bajo protección comunitaria",
-      methodology: "Conservación participativa con enfoque de medios de vida sostenibles",
+      methodology:
+        "Conservación participativa con enfoque de medios de vida sostenibles",
       budget: "Bs. 680,000 por ecosistema protegido",
       icon: <FaTree />,
       color: "#73ae82",
@@ -337,7 +356,8 @@ Logros de Conservación:
     {
       id: 5,
       title: "Desarrollo Comunitario",
-      description: "Fortalecimiento de capacidades locales, autogestión y emprendimiento productivo en las comunidades",
+      description:
+        "Fortalecimiento de capacidades locales, autogestión y emprendimiento productivo en las comunidades",
       detailedDescription: `"El verdadero desarrollo nace desde y para la comunidad"
 
 **Nuestro Enfoque:**
@@ -394,13 +414,15 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
         "/areas/comunidad-2.jpg",
         "/areas/comunidad-3.jpg",
       ],
-      beneficiaries: "Organizaciones sociales, grupos de productores, comunidades indígenas",
+      beneficiaries:
+        "Organizaciones sociales, grupos de productores, comunidades indígenas",
       impact: "20 comunidades con capacidades fortalecidas para la autogestión",
-      methodology: "Desarrollo de base con enfoque de derechos, participación y sostenibilidad",
+      methodology:
+        "Desarrollo de base con enfoque de derechos, participación y sostenibilidad",
       budget: "Bs. 320,000 por comunidad",
       icon: <FaUsers />,
       color: "#67583E",
-    }
+    },
   ];
 
   const openAreaModal = (areaId) => {
@@ -425,7 +447,8 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
         <div className="container">
           <h2 className="section-title">¿Quiénes Somos?</h2>
           <p className="section-subtitle">
-            Fundación MINK'AY - Luchando contra el hambre y la desnutrición en Chuquisaca
+            Fundación MINK'AY - Luchando contra el hambre y la desnutrición en
+            Chuquisaca
           </p>
 
           <div className="cards-grid">
@@ -489,34 +512,49 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
                   responsable del agua, generando impactos medibles y de largo
                   plazo.
                 </p>
-                <p style={{ marginTop: "1rem", fontStyle: "italic", color: "#84714F" }}>
+                <p
+                  style={{
+                    marginTop: "1rem",
+                    fontStyle: "italic",
+                    color: "#84714F",
+                  }}
+                >
                   "Cada ración entregada representa una oportunidad real de
                   cambio, equidad y futuro para miles de estudiantes que hoy
                   enfrentan condiciones de extrema precariedad."
                 </p>
 
-                <div className="approach-details" style={{ marginTop: "1.5rem" }}>
+                <div
+                  className="approach-details"
+                  style={{ marginTop: "1.5rem" }}
+                >
                   <h4 style={{ color: "#537A5A", marginBottom: "0.8rem" }}>
                     Pilares de Acción:
                   </h4>
                   <ul className="values-list">
                     <li>
-                      <strong>Sostenibilidad:</strong> Soluciones que perduren en el tiempo
+                      <strong>Sostenibilidad:</strong> Soluciones que perduren
+                      en el tiempo
                     </li>
                     <li>
-                      <strong>Soberanía Alimentaria:</strong> Fortalecimiento de sistemas locales
+                      <strong>Soberanía Alimentaria:</strong> Fortalecimiento de
+                      sistemas locales
                     </li>
                     <li>
-                      <strong>Justicia Social:</strong> Equidad en el acceso a alimentos
+                      <strong>Justicia Social:</strong> Equidad en el acceso a
+                      alimentos
                     </li>
                     <li>
-                      <strong>Educación Integral:</strong> Apoyo al rendimiento escolar
+                      <strong>Educación Integral:</strong> Apoyo al rendimiento
+                      escolar
                     </li>
                     <li>
-                      <strong>Cuidado Ambiental:</strong> Prácticas ecológicamente responsables
+                      <strong>Cuidado Ambiental:</strong> Prácticas
+                      ecológicamente responsables
                     </li>
                     <li>
-                      <strong>Uso Responsable del Agua:</strong> Preservación del recurso hídrico
+                      <strong>Uso Responsable del Agua:</strong> Preservación
+                      del recurso hídrico
                     </li>
                   </ul>
                 </div>
@@ -525,7 +563,13 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
           </div>
 
           <div className="impact-container" style={{ marginTop: "3rem" }}>
-            <h3 style={{ textAlign: "center", color: "#537A5A", marginBottom: "2rem" }}>
+            <h3
+              style={{
+                textAlign: "center",
+                color: "#537A5A",
+                marginBottom: "2rem",
+              }}
+            >
               ¿Cuál sería nuestro impacto?
             </h3>
             <div className="impact-grid">
@@ -606,7 +650,8 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
         <div className="container">
           <h2 className="section-title">Áreas de Acción</h2>
           <p className="section-subtitle">
-            Haz clic en cualquier área para ver proyectos, metodología y resultados
+            Haz clic en cualquier área para ver proyectos, metodología y
+            resultados
           </p>
 
           <div className="areas-grid">
@@ -634,15 +679,24 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
       </section>
 
       {isAreaModalOpen && selectedArea && (
-        <div className="modal-overlay area-modal-overlay" onClick={closeAreaModal}>
-          <div className="modal-content area-modal-content" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="modal-overlay area-modal-overlay"
+          onClick={closeAreaModal}
+        >
+          <div
+            className="modal-content area-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button className="modal-close" onClick={closeAreaModal}>
               <FaTimes />
             </button>
 
             <div className="area-modal-header">
               <div className="area-modal-title-container">
-                <div className="area-modal-icon" style={{ color: selectedArea.color }}>
+                <div
+                  className="area-modal-icon"
+                  style={{ color: selectedArea.color }}
+                >
                   {selectedArea.icon}
                 </div>
                 <div>
@@ -751,12 +805,17 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
                     className="btn btn-primary"
                     onClick={() => {
                       closeAreaModal();
-                      document.getElementById("donaciones")?.scrollIntoView({ behavior: "smooth" });
+                      document
+                        .getElementById("donaciones")
+                        ?.scrollIntoView({ behavior: "smooth" });
                     }}
                   >
                     <FaHandHoldingHeart /> Apoyar este Área
                   </button>
-                  <button className="btn btn-secondary" onClick={closeAreaModal}>
+                  <button
+                    className="btn btn-secondary"
+                    onClick={closeAreaModal}
+                  >
                     Ver otras áreas
                   </button>
                 </div>
@@ -779,13 +838,13 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
 
       <section id="contacto" className="section section-light">
         <div className="container">
+          {/* AQUÍ ESTÁ EL MAPA DE CONTACTO */}
+          <MapaContacto />
+
           <h2 className="section-title">Contáctanos</h2>
           <p className="section-subtitle">
             Visítanos en nuestra oficina o contáctanos por correo
           </p>
-
-          {/* AQUÍ ESTÁ EL MAPA DE CONTACTO */}
-          <MapaContacto />
 
           <div className="contact-grid">
             <div className="contact-card">
@@ -840,11 +899,22 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
         <div className="container">
           <div className="footer-content">
             <div className="footer-section">
-              <h3 className="footer-logo">🌿 MINK'AY</h3>
-              <p>
-                Fundación dedicada a la reducción de la pobreza y el desarrollo
-                sostenible en Chuquisaca.
-              </p>
+              <div className="footer-logo-container">
+                <div className="footer-logo-img-wrapper">
+                <img
+                  src={process.env.PUBLIC_URL + "/images/minkay.png"}
+                  alt="Logo Fundación MINK'AY"
+                  className="footer-logo-img"
+                />
+                </div>
+                <div className="footer-logo-text">
+                  <h3 className="footer-logo-title">MINK'AY</h3>
+                  <p className="footer-logo-subtitle">
+                    Fundación dedicada a la reducción de la pobreza y el
+                    desarrollo sostenible en Chuquisaca.
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div className="footer-section">
@@ -872,7 +942,8 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
                 <FaMapMarkerAlt /> La Paz 562, Sucre, Chuquisaca
               </p>
               <p className="footer-contact">
-                <FaEnvelope /> <a href="mailto:contacto@minkay.org">contacto@minkay.org</a>
+                <FaEnvelope />{" "}
+                <a href="mailto:contacto@minkay.org">contacto@minkay.org</a>
               </p>
               <p className="footer-contact">
                 <FaPhone /> +591 74536806
@@ -882,7 +953,9 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
             <div className="footer-section">
               <h3>Nuestro Impacto</h3>
               <p className="footer-impact">✓ Familias beneficiadas</p>
-              <p className="footer-impact">✓ Sistemas hidropónicos instalados</p>
+              <p className="footer-impact">
+                ✓ Sistemas hidropónicos instalados
+              </p>
               <p className="footer-impact">✓ Capacitaciones realizadas</p>
               <p className="footer-impact">✓ Comunidades alcanzadas</p>
             </div>

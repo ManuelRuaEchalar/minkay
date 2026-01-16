@@ -1721,3 +1721,401 @@ body {
     font-size: 0.9rem;
   }
 }
+/* ===== FOOTER CONTACTO - ALINEACIÓN CORREGIDA ===== */
+.footer-section .footer-contact {
+  display: flex;
+  align-items: flex-start; /* Para alinear desde la parte superior del texto */
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
+  color: #F2E2D2;
+  line-height: 1.4;
+}
+
+/* Para los enlaces dentro del contacto */
+.footer-section .footer-contact a {
+  color: #F2E2D2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section .footer-contact a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Asegurar que los íconos estén bien alineados */
+.footer-section .footer-contact svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 0.2rem; /* Ajuste fino para alinear con el texto */
+}
+
+/* Para el correo específicamente - que se rompa bien */
+.footer-section .footer-contact:nth-child(3) a {
+  word-break: break-all; /* Para que el correo se rompa en líneas si es necesario */
+}
+/* ===== FOOTER LOGO CON IMAGEN PROFESIONAL - VERSIÓN CORREGIDA ===== */
+.footer-logo-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.footer-logo-img-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CÍRCULO BLANCO DE FONDO - tamaño fijo */
+.footer-logo-bg {
+  position: absolute;
+  width: 84px; /* 6px más pequeño que el wrapper para el borde */
+  height: 84px;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid #F2E2D2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+/* IMAGEN - tamaño fijo independiente del borde */
+.footer-logo-img {
+  width: 80px; /* 4px más pequeño que el fondo para margen */
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 2;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.footer-logo-text {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.footer-logo-title {
+  color: #F2E2D2;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+.footer-logo-subtitle {
+  color: rgba(242, 226, 210, 0.9);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE PARA FOOTER LOGO ===== */
+@media (max-width: 768px) {
+  .footer-logo-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .footer-logo-img-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .footer-logo-bg {
+    width: 74px;
+    height: 74px;
+  }
+  
+  .footer-logo-img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .footer-logo-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+  }
+  
+  .footer-logo-img-wrapper {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .footer-logo-bg {
+    width: 79px;
+    height: 79px;
+  }
+  
+  .footer-logo-img {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .footer-logo-text {
+    padding-top: 0;
+  }
+  
+  .footer-logo-title {
+    font-size: 1.5rem;
+  }
+}
+/* ================================
+   CORRECCIÓN PARA ÁREAS DE ACCIÓN RESPONSIVE
+   ================================ */
+
+/* Grid de áreas en dispositivos móviles */
+@media (max-width: 768px) {
+  .areas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .area-card {
+    padding: 1.5rem;
+  }
+  
+  .area-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .area-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .area-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+/* Correcciones específicas para el modal en móviles */
+@media (max-width: 768px) {
+  .area-modal-content {
+    padding: 1.5rem;
+    width: 95%;
+    max-height: 85vh;
+    margin: 1rem;
+    border-radius: 15px;
+  }
+  
+  .area-modal-title-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .area-modal-icon {
+    font-size: 2.5rem;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .modal-subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .area-modal-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .area-images-section {
+    padding: 1rem;
+  }
+  
+  .area-images-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .area-image-container {
+    aspect-ratio: 16/9;
+  }
+  
+  .area-image-placeholder {
+    padding: 1.5rem;
+  }
+  
+  .area-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .area-stat-card {
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+  
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .detailed-description-box {
+    max-height: 250px;
+    padding: 1rem;
+  }
+  
+  .detailed-description-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .area-modal-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .area-modal-actions .btn {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Ajustes extra para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .area-modal-content {
+    padding: 1.25rem;
+    margin: 0.5rem;
+    border-radius: 12px;
+  }
+  
+  .area-modal-header {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .area-modal-title-container {
+    gap: 0.8rem;
+  }
+  
+  .area-modal-icon {
+    font-size: 2rem;
+  }
+  
+  .modal-title {
+    font-size: 1.3rem;
+  }
+  
+  .modal-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .area-images-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .area-image-placeholder {
+    padding: 1rem;
+  }
+  
+  .area-image-placeholder p {
+    font-size: 0.9rem;
+  }
+  
+  .image-note {
+    font-size: 0.75rem;
+  }
+  
+  .area-detailed-description h4,
+  .area-methodology h4,
+  .area-results h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .area-results {
+    padding: 1rem;
+  }
+  
+  .result-item {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+  }
+  
+  /* Mejorar la legibilidad del texto largo */
+  .detailed-description-box {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
+/* Asegurar que el modal sea completamente responsivo en todos los dispositivos */
+@media (max-width: 1024px) {
+  .area-modal-content {
+    max-width: 95vw;
+    width: 90%;
+  }
+  
+  .area-modal-grid {
+    gap: 2rem;
+  }
+}
+
+/* Mejorar el scroll en el modal para móviles */
+.detailed-description-box {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.detailed-description-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.detailed-description-box::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.detailed-description-box::-webkit-scrollbar-thumb {
+  background: #537A5A;
+  border-radius: 3px;
+}
+
+/* Ajustes para tablets en modo horizontal */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .area-modal-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .area-images-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .detailed-description-box {
+    max-height: 200px;
+  }
+}
