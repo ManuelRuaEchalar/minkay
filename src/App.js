@@ -34,12 +34,44 @@ import {
   FaSun,
   FaIndustry,
   FaTree,
+  FaChevronLeft,
+  FaChevronRight,
+  FaExpand,
 } from "react-icons/fa";
 import "./styles/global.css";
 
 function App() {
   const [selectedArea, setSelectedArea] = useState(null);
   const [isAreaModalOpen, setIsAreaModalOpen] = useState(false);
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [selectedAreaImages, setSelectedAreaImages] = useState([]);
+
+  const openImageModal = (areaImages, index) => {
+    setSelectedAreaImages(areaImages);
+    setSelectedImageIndex(index);
+    setIsImageModalOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeImageModal = () => {
+    setIsImageModalOpen(false);
+    setSelectedAreaImages([]);
+    setSelectedImageIndex(0);
+    document.body.style.overflow = "auto";
+  };
+
+  const nextImage = () => {
+    setSelectedImageIndex((prevIndex) => 
+      (prevIndex + 1) % selectedAreaImages.length
+    );
+  };
+
+  const prevImage = () => {
+    setSelectedImageIndex((prevIndex) => 
+      prevIndex === 0 ? selectedAreaImages.length - 1 : prevIndex - 1
+    );
+  };
 
   const objectivesData = [
     {
@@ -159,9 +191,9 @@ Componentes principales:
 ✓ 120 escuelas con programas activos`,
       duration: "Programa continuo con evaluación anual",
       images: [
-        "/areas/alimentacion-1.jpg",
-        "/areas/alimentacion-2.jpg",
-        "/areas/alimentacion-3.jpg",
+        process.env.PUBLIC_URL + "/images/areas/alimentacion-1.jpg",
+        process.env.PUBLIC_URL + "/images/areas/alimentacion-2.jpg",
+        process.env.PUBLIC_URL + "/images/areas/alimentacion-3.jpg",
       ],
       beneficiaries:
         "20,900 estudiantes y sus familias en 120 escuelas rurales",
@@ -218,9 +250,10 @@ Sistemas NFT (Nutrient Film Technique) alimentados 100% con energía solar fotov
 ✓ 5 emprendimientos generando empleo local`,
       duration: "18 meses por instalación completa",
       images: [
-        "/areas/hidroponia-1.jpg",
-        "/areas/hidroponia-2.jpg",
-        "/areas/hidroponia-3.jpg",
+        process.env.PUBLIC_URL + "/images/hidroponia/hidroponia1.jpeg",
+        process.env.PUBLIC_URL + "/images/hidroponia/hidroponia2.jpeg",
+        process.env.PUBLIC_URL + "/images/hidroponia/hidroponia3.jpeg",
+        process.env.PUBLIC_URL + "/images/hidroponia/hidroponia4.jpeg",
       ],
       beneficiaries:
         "Agricultores familiares, escuelas técnicas, emprendedores rurales",
@@ -280,9 +313,9 @@ Impacto Económico:
 ✓ 40% de participación de mujeres en dirección`,
       duration: "24 meses por cadena de valor desarrollada",
       images: [
-        "/areas/agroindustria-1.jpg",
-        "/areas/agroindustria-2.jpg",
-        "/areas/agroindustria-3.jpg",
+        process.env.PUBLIC_URL + "/images/areas/agroindustria-1.jpg",
+        process.env.PUBLIC_URL + "/images/areas/agroindustria-2.jpg",
+        process.env.PUBLIC_URL + "/images/areas/agroindustria-3.jpg",
       ],
       beneficiaries:
         "Pequeños productores, mujeres rurales, comunidades indígenas",
@@ -340,9 +373,9 @@ Logros de Conservación:
 ✓ 2 premios nacionales de conservación`,
       duration: "36 meses por ecosistema intervenido",
       images: [
-        "/areas/tierra-viva-1.jpg",
-        "/areas/tierra-viva-2.jpg",
-        "/areas/tierra-viva-3.jpg",
+        process.env.PUBLIC_URL + "/images/areas/tierra-viva-1.jpg",
+        process.env.PUBLIC_URL + "/images/areas/tierra-viva-2.jpg",
+        process.env.PUBLIC_URL + "/images/areas/tierra-viva-3.jpg",
       ],
       beneficiaries:
         "Comunidades indígenas, familias forestales, jóvenes rurales",
@@ -410,9 +443,9 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
 ✓ 15 comunidades certificadas en autogestión`,
       duration: "24 meses por proceso comunitario",
       images: [
-        "/areas/comunidad-1.jpg",
-        "/areas/comunidad-2.jpg",
-        "/areas/comunidad-3.jpg",
+        process.env.PUBLIC_URL + "/images/areas/comunidad-1.jpg",
+        process.env.PUBLIC_URL + "/images/areas/comunidad-2.jpg",
+        process.env.PUBLIC_URL + "/images/areas/comunidad-3.jpg",
       ],
       beneficiaries:
         "Organizaciones sociales, grupos de productores, comunidades indígenas",
@@ -715,13 +748,32 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
                   </div>
                   <div className="area-images-grid">
                     {selectedArea.images.map((img, index) => (
-                      <div key={index} className="area-image-container">
-                        <div className="area-image-placeholder">
-                          <FaImages size={40} />
-                          <p>Proyecto {index + 1}</p>
-                          <small className="image-note">
-                            (Imagen representativa)
-                          </small>
+                      <div 
+                        key={index} 
+                        className="area-image-container clickable-image"
+                        onClick={() => openImageModal(selectedArea.images, index)}
+                      >
+                        {selectedArea.id === 2 ? (
+                          // Para hidroponía, mostrar imágenes reales
+                          <img 
+                            src={img} 
+                            alt={`Proyecto ${selectedArea.title.toLowerCase()} ${index + 1}`}
+                            className="area-real-image"
+                            loading="lazy"
+                          />
+                        ) : (
+                          // Para otras áreas, mantener placeholder
+                          <div className="area-image-placeholder">
+                            <FaImages size={40} />
+                            <p>Proyecto {index + 1}</p>
+                            <small className="image-note">
+                              (Haz clic para ver imagen)
+                            </small>
+                          </div>
+                        )}
+                        <div className="image-overlay">
+                          <FaExpand className="expand-icon" />
+                          <span>Ver imagen</span>
                         </div>
                       </div>
                     ))}
@@ -820,6 +872,57 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
                   </button>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL PARA VER IMÁGENES EN GRANDE */}
+      {isImageModalOpen && selectedAreaImages.length > 0 && (
+        <div className="modal-overlay image-modal-overlay" onClick={closeImageModal}>
+          <div 
+            className="modal-content image-modal-content" 
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="image-modal-close" onClick={closeImageModal}>
+              <FaTimes />
+            </button>
+            
+            <div className="image-modal-main">
+              <button className="nav-button prev-button" onClick={prevImage}>
+                <FaChevronLeft />
+              </button>
+              
+              <div className="image-display-container">
+                <img 
+                  src={selectedAreaImages[selectedImageIndex]} 
+                  alt={`Imagen ${selectedImageIndex + 1}`}
+                  className="full-size-image"
+                />
+                <div className="image-counter">
+                  {selectedImageIndex + 1} / {selectedAreaImages.length}
+                </div>
+              </div>
+              
+              <button className="nav-button next-button" onClick={nextImage}>
+                <FaChevronRight />
+              </button>
+            </div>
+            
+            <div className="image-thumbnails">
+              {selectedAreaImages.map((img, index) => (
+                <div 
+                  key={index} 
+                  className={`thumbnail-container ${index === selectedImageIndex ? 'active' : ''}`}
+                  onClick={() => setSelectedImageIndex(index)}
+                >
+                  <img 
+                    src={img} 
+                    alt={`Miniatura ${index + 1}`}
+                    className="thumbnail-image"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
