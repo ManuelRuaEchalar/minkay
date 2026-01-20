@@ -19,7 +19,6 @@
   display: none;
 }
 
-/* Top Bar con alineación vertical mejorada */
 .top-bar-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -31,115 +30,49 @@
   gap: 0.5rem;
 }
 
-/* Contenedores de información - ALINEADOS CENTRALMENTE */
-.location-info, .contact-info {
-  display: flex;
-  align-items: center; /* Esto ya debería centrar verticalmente */
-  gap: 0.5rem;
-  height: 100%; /* Ocupa toda la altura del top-bar */
-  padding: 0.2rem 0; /* Un poco de padding vertical */
-}
-
-/* Ajuste fino para alinear íconos y texto */
-.icon {
-  color: #F2E2D2;
-  transition: transform 0.3s ease;
-  display: flex;
-  align-items: center; /* Centra el ícono verticalmente */
-  justify-content: center;
-  height: 100%; /* Ocupa toda la altura */
-}
-
-/* Asegurar que el texto esté alineado */
-.location-info span, .email-link {
-  display: flex;
-  align-items: center; /* Centra el texto verticalmente */
-  height: 100%; /* Ocupa toda la altura */
-  line-height: normal; /* Elimina line-height por defecto */
-}
-
-.email-link {
-  color: #F2E2D2;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.email-link:hover {
-  color: #FFFFFF;
-  text-decoration: underline;
-}
-
-@media (min-width: 768px) {
-  .top-bar {
-    display: block;
-  }
-}
-
-/* CONTENEDOR PRINCIPAL CON ALTURA FIJA */
+/* CONTENEDOR PRINCIPAL - ESTRUCTURA SIMPLIFICADA */
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.4rem 1.5rem;
+  padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  min-height: 70px; /* ALTURA MÍNIMA FIJA para el navbar */
-  max-height: 90px; /* ALTURA MÁXIMA para contener el logo */
+  height: 80px; /* ALTURA FIJA CONSISTENTE */
 }
 
-/* LOGO CONTAINER - Permite logo grande sin expandir navbar */
+/* LOGO SECTION - CENTRADO PERFECTO */
 .logo-section {
   flex-shrink: 0;
   display: flex;
-  align-items: center;
-  height: 100%; /* Ocupa toda la altura del contenedor */
+  align-items: center; /* Esto garantiza centrado vertical */
+  height: 100%;
 }
 
 .logo {
   display: flex;
-  align-items: center;
+  align-items: center; /* Centra imagen y texto verticalmente */
   gap: 0.8rem;
-  margin-top: 10px;
   text-decoration: none;
-  transition: transform 0.3s ease;
   height: 100%; /* Ocupa toda la altura disponible */
 }
 
-/* LOGO - IMAGEN MÁS GRANDE PERO CONTROLADA */
+/* LOGO IMAGEN - TAMAÑOS CONTROLADOS */
 .logo-img {
-  height: 1250px; /* Tamaño base CONTROLADO */
+  height: 95px; /* Tamaño base controlado */
   width: auto;
   object-fit: contain;
-  max-height: 125px; /* LÍMITE MÁXIMO de altura */
   transition: all 0.3s ease;
 }
 
-/* Asegurar que el logo no desborde en móvil */
-@media (max-width: 767px) {
-  .nav-container {
-    min-height: 60px; /* Más bajo en móvil */
-    max-height: 75px;
-    padding: 0.3rem 1rem;
-  }
-  
-  .logo-img {
-    height: 70px; /* Más pequeño en móvil */
-    max-height: 70px;
-  }
-}
-
-/* Contenedor de texto del logo - CENTRADO VERTICALMENTE */
+/* LOGO TEXT CONTAINER - SIN TRANSFORM QUE DESALINEA */
 .logo-text-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Esto centra verticalmente */
-  gap: 0.15rem;
-  height: 100%; /* Ocupa toda la altura disponible */
-  transform: translateY(-7px);
+  justify-content: center; /* Centra el contenido verticalmente */
+  height: 100%; /* Ocupa toda la altura */
+  padding: 0.5rem 0; /* Padding consistente */
 }
 
 /* Texto del logo */
@@ -149,7 +82,7 @@
   color: #2C4A35;
   line-height: 1;
   text-transform: uppercase;
-  margin: 0; /* Elimina márgenes por defecto */
+  margin: 0;
 }
 
 .logo-subtitle {
@@ -159,7 +92,8 @@
   letter-spacing: 0.8px;
   line-height: 1.2;
   text-transform: uppercase;
-  margin: 0; /* Elimina márgenes por defecto */
+  margin: 0;
+  margin-top: 2px; /* Pequeño margen en lugar de gap */
 }
 
 /* ===== MENÚ DE NAVEGACIÓN ===== */
@@ -170,7 +104,6 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  flex-wrap: wrap;
 }
 
 /* Items de navegación */
@@ -184,7 +117,7 @@
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
-  padding: 0.4rem 0.7rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 6px;
   transition: all 0.3s ease;
   display: inline-block;
@@ -240,15 +173,13 @@
 /* TABLET (768px - 1024px) */
 @media (max-width: 1024px) {
   .nav-container {
-    padding: 0.4rem 1.2rem;
+    padding: 0 1.2rem;
+    height: 75px; /* Altura consistente */
     gap: 1rem;
-    min-height: 65px;
-    max-height: 85px;
   }
   
   .logo-img {
-    height: 75px; /* Controlado en tablet */
-    max-height: 75px;
+    height: 60px; /* Reducido proporcionalmente */
   }
   
   .logo-text {
@@ -265,7 +196,7 @@
   
   .nav-link {
     font-size: 0.85rem;
-    padding: 0.35rem 0.6rem;
+    padding: 0.4rem 0.7rem;
   }
   
   .btn-donate-header {
@@ -286,18 +217,22 @@
   }
   
   .nav-container {
-    padding: 0.3rem 1rem;
-    min-height: 60px;
-    max-height: 70px;
+    padding: 0 1rem;
+    height: 70px; /* Altura consistente en móvil */
+  }
+  
+  .logo {
+    gap: 0.6rem;
   }
   
   .logo-img {
-    height: 60px; /* Más controlado en móvil */
-    max-height: 60px;
+    height: 55px; /* Tamaño controlado */
+    max-height: 55px;
+    padding-left: 0; /* Eliminado padding que causaba desalineación */
   }
   
   .logo-text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   
   .logo-subtitle {
@@ -314,7 +249,7 @@
     background: white;
     flex-direction: column;
     align-items: flex-start;
-    padding: 4.5rem 1.5rem 1.5rem;
+    padding: 5rem 1.5rem 1.5rem;
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
     transition: right 0.4s ease;
     z-index: 999;
@@ -367,14 +302,12 @@
 /* MÓVIL PEQUEÑO (hasta 480px) */
 @media (max-width: 480px) {
   .nav-container {
-    padding: 0.2rem 0.8rem;
-    min-height: 55px;
-    max-height: 65px;
+    padding: 0 0.8rem;
+    height: 65px; /* Altura aún más pequeña */
   }
   
   .logo-img {
     height: 50px;
-    max-height: 50px;
   }
   
   .logo-text {
@@ -387,6 +320,6 @@
   
   .nav-menu {
     width: 250px;
-    padding: 4rem 1.2rem 1.2rem;
+    padding: 4.5rem 1.2rem 1.2rem;
   }
 }
