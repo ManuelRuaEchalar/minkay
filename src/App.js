@@ -4,14 +4,10 @@ import HeroSlider from "./components/Hero/HeroSlider";
 import MapaContacto from "./components/Contacto/MapaContacto";
 import SistemaDonaciones from "./components/Donaciones/SistemaDonaciones";
 import {
-  FaLeaf,
   FaWater,
-  FaSeedling,
   FaRecycle,
   FaBook,
   FaHandsHelping,
-  FaUtensils,
-  FaHeart,
   FaMapMarkerAlt,
   FaEnvelope,
   FaPhone,
@@ -21,8 +17,6 @@ import {
   FaUsers,
   FaGlobeAmericas,
   FaTimes,
-  FaImages,
-  FaCalendarAlt,
   FaHandHoldingHeart,
   FaCrosshairs,
   FaBullseye,
@@ -36,7 +30,6 @@ import {
   FaTree,
   FaChevronLeft,
   FaChevronRight,
-  FaExpand,
 } from "react-icons/fa";
 import "./styles/global.css";
 
@@ -47,6 +40,7 @@ function App() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedAreaImages, setSelectedAreaImages] = useState([]);
 
+  // eslint-disable-next-line no-unused-vars
   const openImageModal = (areaImages, index) => {
     setSelectedAreaImages(areaImages);
     setSelectedImageIndex(index);
@@ -1107,13 +1101,13 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
               <h3>Redes Sociales</h3>
               <p>Síguenos para estar al día con nuestros proyectos</p>
               <div className="social-icons">
-                <a href="#" className="social-icon" aria-label="Facebook">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
                   <FaFacebook size={24} />
                 </a>
-                <a href="#" className="social-icon" aria-label="Instagram">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
                   <FaInstagram size={24} />
                 </a>
-                <a href="#" className="social-icon" aria-label="Twitter">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Twitter">
                   <FaTwitter size={24} />
                 </a>
               </div>
