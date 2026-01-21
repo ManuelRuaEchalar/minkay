@@ -7,6 +7,13 @@
   box-sizing: border-box;
 }
 
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -41,9 +48,17 @@ body {
 /* ================================
    UTILIDADES
    ================================ */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
 
 /* ================================
    BOTONES
@@ -71,7 +86,7 @@ body {
   background: #84714F;
   border-color: #84714F;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary {
@@ -154,7 +169,7 @@ section {
    ================================ */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -167,28 +182,28 @@ section {
 
 .objectives-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
 
 .areas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
 
 .donation-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -207,13 +222,13 @@ section {
   background: white;
   border-radius: 15px;
   padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .card-icon {
@@ -532,7 +547,7 @@ section {
   border-radius: 15px;
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   border-top: 4px solid;
 }
@@ -585,366 +600,397 @@ section {
 }
 
 /* ================================
-   MODAL DE ÁREAS DE ACCIÓN
+   MODAL DE ÁREAS DE ACCIÓN - REDISEÑO LIMPIO
    ================================ */
+
+/* Backdrop del modal */
 .area-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3000;
-  padding: 1rem;
-  backdrop-filter: blur(5px);
+  z-index: 9999;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
+/* Contenido del modal */
 .area-modal-content {
   background: white;
-  border-radius: 20px;
-  padding: 2.5rem;
-  max-width: 1300px;
-  width: 95%;
-  max-height: 90vh;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 900px;
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
   overflow-y: auto;
   position: relative;
-  animation: modalSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  animation: areaModalIn 0.3s ease-out;
 }
 
-@keyframes modalSlideIn {
+@keyframes areaModalIn {
   from {
     opacity: 0;
-    transform: translateY(30px) scale(0.95);
+    transform: scale(0.95);
   }
+
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: scale(1);
   }
 }
 
+/* Botón cerrar */
 .area-modal-content .modal-close {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: #F2E2D2;
-  color: #537A5A;
-  border: none;
+  top: 12px;
+  right: 12px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: none;
+  background: #f0f0f0;
+  color: #666;
+  font-size: 1.1rem;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  font-size: 1.2rem;
   z-index: 10;
-  transition: all 0.3s ease;
+  transition: all 0.2s;
 }
 
 .area-modal-content .modal-close:hover {
   background: #537A5A;
   color: white;
-  transform: rotate(90deg);
 }
 
+/* Header del modal */
 .area-modal-header {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid #F2E2D2;
+  padding: 1.5rem;
+  padding-right: 60px;
+  border-bottom: 1px solid #eee;
 }
 
 .area-modal-title-container {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .area-modal-icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   flex-shrink: 0;
-}
-
-.area-modal-icon svg {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .modal-title {
   color: #537A5A;
-  font-size: 2.2rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  margin: 0 0 0.3rem 0;
   font-weight: 700;
 }
 
 .modal-subtitle {
   color: #666;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.4;
 }
 
+/* Grid principal del modal */
 .area-modal-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: start;
-}
-
-/* Columna izquierda */
-.area-modal-left {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  padding: 1.5rem;
 }
 
+/* Secciones del modal */
+.area-modal-left,
+.area-modal-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Sección de imágenes */
 .area-images-section {
-  background: #F9F9F9;
-  border-radius: 15px;
-  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 1rem;
 }
 
 .images-header {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.images-header h4 {
+  margin: 0;
+  color: #537A5A;
+  font-size: 1rem;
 }
 
 .images-icon {
   color: #537A5A;
-  font-size: 1.5rem;
 }
 
 .area-images-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 0.75rem;
 }
 
 .area-image-container {
   position: relative;
-  border-radius: 12px;
+  aspect-ratio: 1;
+  border-radius: 8px;
   overflow: hidden;
-  aspect-ratio: 1/1;
-  background: linear-gradient(135deg, #f0f7f0, #e8f0e8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #e8e8e8;
+  cursor: pointer;
+}
+
+.area-real-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .area-image-placeholder {
-  grid-column: span 1;
-  background: linear-gradient(135deg, rgba(83, 122, 90, 0.05), rgba(115, 174, 130, 0.1));
-  border: 2px dashed #537A5A;
-  border-radius: 10px;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
-  width: 100%;
-  height: 100%;
-}
-
-.area-image-placeholder:hover {
-  background: linear-gradient(135deg, rgba(83, 122, 90, 0.1), rgba(115, 174, 130, 0.2));
-  border-color: #84714F;
+  background: linear-gradient(135deg, #f0f7f0, #e8f0e8);
+  border: 2px dashed #537A5A;
+  gap: 0.5rem;
+  color: #537A5A;
 }
 
 .area-image-placeholder p {
-  color: #537A5A;
-  font-weight: 600;
   margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .image-note {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #84714F;
-  font-style: italic;
 }
 
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.clickable-image:hover .image-overlay {
+  opacity: 1;
+}
+
+.expand-icon {
+  font-size: 1.5rem;
+}
+
+/* Metodología */
 .area-methodology {
-  background: white;
+  background: #fff;
+  border: 1px solid #eee;
   border-radius: 12px;
-  padding: 1.5rem;
-  border: 2px solid #F2E2D2;
+  padding: 1rem;
 }
 
 .area-methodology h4 {
   color: #537A5A;
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
 }
 
 .methodology-text {
   color: #555;
-  line-height: 1.7;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
-/* Columna derecha */
-.area-modal-right {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
+/* Descripción detallada */
 .area-detailed-description h4 {
   color: #537A5A;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
 }
 
 .detailed-description-box {
-  background: #F9F9F9;
-  border-radius: 12px;
-  padding: 1.5rem;
-  max-height: 300px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 1rem;
+  max-height: 200px;
   overflow-y: auto;
-  border: 1px solid #e8f0e8;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-}
-
-.detailed-description-box::-webkit-scrollbar {
-  width: 6px;
-}
-
-.detailed-description-box::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 3px;
-}
-
-.detailed-description-box::-webkit-scrollbar-thumb {
-  background: #537A5A;
-  border-radius: 3px;
 }
 
 .detailed-description-text {
   color: #555;
-  line-height: 1.8;
+  font-size: 0.9rem;
+  line-height: 1.6;
   white-space: pre-line;
-  font-size: 0.95rem;
+  margin: 0;
 }
 
-.detailed-description-text strong {
-  color: #537A5A;
-  font-weight: 600;
-}
-
-/* Grid de estadísticas */
+/* Stats grid */
 .area-stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .area-stat-card {
-  background: linear-gradient(135deg, #F2E2D2, #f8f0e8);
-  border-radius: 12px;
-  padding: 1.2rem;
+  background: #F2E2D2;
+  border-radius: 10px;
+  padding: 0.75rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  transition: all 0.3s ease;
-}
-
-.area-stat-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(83, 122, 90, 0.1);
+  gap: 0.75rem;
 }
 
 .stat-icon {
-  width: 45px;
-  height: 45px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #537A5A;
-  font-size: 1.2rem;
   flex-shrink: 0;
 }
 
 .stat-content h5 {
   color: #2C4A35;
-  font-size: 0.95rem;
-  margin-bottom: 0.3rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  margin: 0 0 0.2rem 0;
 }
 
 .stat-value {
   color: #666;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   margin: 0;
-  font-weight: 500;
 }
 
 /* Resultados */
 .area-results {
-  background: white;
+  background: #fff;
+  border: 1px solid #eee;
   border-radius: 12px;
-  padding: 1.5rem;
-  border: 2px solid #F2E2D2;
+  padding: 1rem;
 }
 
 .area-results h4 {
   color: #537A5A;
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
 }
 
 .results-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .result-item {
   color: #555;
-  line-height: 1.6;
-  margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  padding-left: 1.2rem;
   position: relative;
+  margin-bottom: 0.5rem;
 }
 
 .result-item:before {
   content: "✓";
   color: #537A5A;
-  font-weight: bold;
   position: absolute;
   left: 0;
+  font-weight: bold;
 }
 
-/* Botones de acción del modal */
+/* Botones de acción */
 .area-modal-actions {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 .area-modal-actions .btn {
-  flex: 1;
-  padding: 1rem;
-  font-size: 1rem;
+  padding: 0.9rem;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  border-radius: 10px;
+}
+
+/* ================================
+   RESPONSIVE PARA MODAL DE ÁREAS
+   ================================ */
+@media (min-width: 768px) {
+  .area-modal-content {
+    max-width: 1000px;
+  }
+
+  .area-modal-header {
+    padding: 2rem;
+    padding-right: 70px;
+  }
+
+  .modal-title {
+    font-size: 1.8rem;
+  }
+
+  .area-modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .area-modal-actions {
+    flex-direction: row;
+  }
+
+  .area-modal-actions .btn {
+    flex: 1;
+  }
+
+  .detailed-description-box {
+    max-height: 280px;
+  }
 }
 
 /* ================================
    CAROUSEL/SLIDER
    ================================ */
-.slide-active-before, 
-.slide-active, 
+.slide-active-before,
+.slide-active,
 .slide-active-after {
   position: relative;
   max-width: 100%;
@@ -1082,7 +1128,7 @@ section {
   border-radius: 15px;
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
 
@@ -1442,16 +1488,16 @@ section {
   .section {
     padding: 60px 0;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .section-subtitle {
     font-size: 1.1rem;
     padding: 0 1rem;
   }
-  
+
   .cards-grid,
   .areas-grid,
   .donation-grid,
@@ -1459,273 +1505,190 @@ section {
   .footer-content {
     grid-template-columns: 1fr;
   }
-  
+
   .objectives-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .objective-header {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
   }
-  
+
   .objective-number-container {
     flex-direction: row;
     justify-content: center;
     gap: 1rem;
   }
-  
+
   .objective-number {
     font-size: 2.2rem;
   }
-  
+
   .objective-title {
     padding-top: 0;
     font-size: 1.3rem;
   }
-  
+
   .objective-card-improved {
     padding: 1.5rem;
   }
-  
+
   .objective-icon {
     width: 42px;
     height: 42px;
     font-size: 1.3rem;
   }
-  
+
   .carousel-image,
   .slider-image,
   .swiper-slide img {
     max-height: 300px;
   }
-  
+
   .mapa-container {
     padding: 1.2rem;
     margin: 1rem 0.5rem;
     border-radius: 12px;
   }
-  
+
   .mapa-wrapper {
     margin-bottom: 1.5rem;
     border-radius: 8px;
   }
-  
+
   .info-contacto {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
-  
+
   .info-item {
     padding: 1.2rem;
     min-height: auto;
   }
-  
+
   .mapa-direccion {
     flex-direction: column;
     text-align: center;
     gap: 0.3rem;
   }
-  
+
   .qr-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     text-align: center;
   }
-  
+
   .qr-image {
     max-width: 250px;
     margin: 0 auto;
   }
-  
+
   .qr-instructions {
     text-align: left;
   }
-  
+
   .qr-instructions ol {
     padding-left: 1.2rem;
   }
-  
+
   .modal-content {
     padding: 1.5rem;
     width: 95%;
     max-height: 85vh;
+    max-height: 85dvh;
+    overflow-y: auto;
   }
-  
+
   .modal-content h3 {
     font-size: 1.4rem;
     margin-bottom: 1.2rem;
   }
-  
-  .area-modal-content {
-    padding: 1.5rem;
-    width: 95%;
-    max-height: 85vh;
-    margin: 1rem;
-    border-radius: 15px;
-  }
-  
-  .area-modal-title-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-  
-  .area-modal-icon {
-    font-size: 2.5rem;
-  }
-  
-  .modal-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .modal-subtitle {
-    font-size: 1rem;
-    line-height: 1.4;
-  }
-  
-  .area-modal-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .area-images-section {
-    padding: 1rem;
-  }
-  
-  .area-images-grid {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-  
-  .area-image-container {
-    aspect-ratio: 16/9;
-  }
-  
-  .area-image-placeholder {
-    padding: 1.5rem;
-  }
-  
-  .area-stats-grid {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-  
-  .area-stat-card {
-    padding: 1rem;
-    gap: 0.8rem;
-  }
-  
-  .stat-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-  
-  .detailed-description-box {
-    max-height: 250px;
-    padding: 1rem;
-  }
-  
-  .detailed-description-text {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-  
-  .area-modal-actions {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  
-  .area-modal-actions .btn {
-    width: 100%;
-    padding: 0.9rem;
-    font-size: 0.95rem;
-  }
-  
+
+  /* Los estilos de area-modal ahora están en la sección principal con media query incluido */
+
   .areas-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
   }
-  
+
   .area-card {
     padding: 1.5rem;
   }
-  
+
   .area-icon {
     font-size: 2.5rem;
     margin-bottom: 0.8rem;
   }
-  
+
   .area-card h3 {
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
   }
-  
+
   .area-card p {
     font-size: 0.9rem;
     line-height: 1.4;
   }
-  
+
   .impact-container {
     padding: 1.5rem;
   }
-  
+
   .impact-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   .impact-content h4 {
     font-size: 1.6rem;
   }
-  
+
   .stat-number {
     font-size: 2rem;
   }
-  
+
   .footer-logo-container {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
   }
-  
+
   .footer-logo-img-wrapper {
     width: 80px;
     height: 80px;
   }
-  
+
   .footer-logo-bg {
     width: 74px;
     height: 74px;
   }
-  
+
   .footer-logo-img {
     width: 70px;
     height: 70px;
   }
-  
+
   .footer-logo-title {
     font-size: 1.4rem;
   }
-  
+
   .proyecto-imagen {
     height: 180px;
   }
-  
+
   .proyecto-contenido {
     padding: 1.2rem;
   }
-  
+
   .btn-ver-proyecto {
     max-width: 100%;
     padding: 0.8rem 1.5rem;
   }
-  
+
   .proyecto-modal-imagen {
     max-height: 250px;
   }
@@ -1733,405 +1696,375 @@ section {
 
 /* Dispositivos muy pequeños (hasta 480px) */
 @media (max-width: 480px) {
+
   .carousel-image,
   .slider-image,
   .swiper-slide img {
     max-height: 200px;
   }
-  
+
   .mapa-container {
     padding: 1rem;
     margin: 0.5rem;
   }
-  
+
   .mapa-titulo {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
   }
-  
+
   .info-item {
     padding: 1rem;
   }
-  
+
   .info-icon {
     width: 45px;
     height: 45px;
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
   }
-  
+
   .qr-image {
     max-width: 200px;
   }
-  
+
   .modal-content {
     padding: 1.2rem;
     width: 98%;
     border-radius: 12px;
+    max-height: 80vh;
+    max-height: 80dvh;
+    overflow-y: auto;
   }
-  
+
   .modal-close {
     top: 0.5rem;
     right: 0.5rem;
     font-size: 1.3rem;
   }
-  
+
   .qr-instructions li {
     font-size: 0.9rem;
     margin-bottom: 0.4rem;
   }
-  
+
   .area-modal-content {
     padding: 1.25rem;
-    margin: 0.5rem;
+    margin: 0;
     border-radius: 12px;
+    max-height: 80vh;
+    max-height: 80dvh;
+    overflow-y: auto;
   }
-  
+
   .area-modal-header {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
   }
-  
+
   .area-modal-title-container {
     gap: 0.8rem;
   }
-  
+
   .area-modal-icon {
     font-size: 2rem;
   }
-  
+
   .modal-title {
     font-size: 1.3rem;
   }
-  
+
   .modal-subtitle {
     font-size: 0.9rem;
   }
-  
+
   .area-images-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .area-image-placeholder {
     padding: 1rem;
   }
-  
+
   .area-image-placeholder p {
     font-size: 0.9rem;
   }
-  
+
   .image-note {
     font-size: 0.75rem;
   }
-  
+
   .area-detailed-description h4,
   .area-methodology h4,
   .area-results h4 {
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
   }
-  
+
   .area-results {
     padding: 1rem;
   }
-  
+
   .result-item {
     font-size: 0.85rem;
     margin-bottom: 0.5rem;
     padding-left: 1.2rem;
   }
-  
+
   .detailed-description-box {
     font-size: 0.85rem;
     line-height: 1.4;
   }
-  
+
   .objective-card-improved {
     padding: 1.25rem;
   }
-  
+
   .objective-number {
     font-size: 2rem;
   }
-  
+
   .impact-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .impact-container {
     padding: 1.25rem;
   }
-  
+
   .impact-card {
     padding: 1.25rem;
   }
-  
+
   .footer-logo-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 0.8rem;
   }
-  
+
   .footer-logo-img-wrapper {
     width: 85px;
     height: 85px;
   }
-  
+
   .footer-logo-bg {
     width: 79px;
     height: 79px;
   }
-  
+
   .footer-logo-img {
     width: 75px;
     height: 75px;
   }
-  
+
   .footer-logo-text {
     padding-top: 0;
   }
-  
+
   .footer-logo-title {
     font-size: 1.5rem;
   }
-  
+
   .proyecto-imagen {
     height: 160px;
   }
-  
+
   .proyecto-contenido {
     padding: 1rem;
   }
-  
+
   .proyecto-contenido h3 {
     font-size: 1.1rem;
   }
-  
+
   .btn-ver-proyecto {
     padding: 0.7rem 1.2rem;
     font-size: 0.9rem;
   }
 }
 
-/* Tablets (769px a 1024px) */
-@media (max-width: 1024px) {
-  .area-modal-content {
-    max-width: 95vw;
-    width: 90%;
-  }
-  
-  .area-modal-grid {
-    gap: 2rem;
-  }
-}
+/* Los estilos de area-modal ahora están en la sección principal */
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .area-modal-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-  
-  .area-images-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .detailed-description-box {
-    max-height: 200px;
-  }
-}
 /* ================================
-   GALERÍA DE IMÁGENES - MODAL
+   GALERÍA DE IMÁGENES - MODAL LIMPIO
    ================================ */
 
-/* Overlay para modal de imágenes */
 .image-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.95);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 4000;
-  padding: 1rem;
-  backdrop-filter: blur(10px);
-  animation: fadeIn 0.3s ease;
+  z-index: 10000;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Contenido del modal de imágenes */
 .image-modal-content {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border-radius: 20px;
-  padding: 2rem;
-  max-width: 95vw;
-  max-height: 95vh;
-  width: 90%;
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 16px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 900px;
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
   position: relative;
-  animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
+  box-sizing: border-box;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Botón cerrar del modal de imágenes */
 .image-modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(255, 255, 255, 0.1);
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.15);
   color: white;
   border: none;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   z-index: 10;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.2s;
 }
 
 .image-modal-close:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: rotate(90deg);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.25);
 }
 
-/* Área principal de la imagen */
 .image-modal-main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   flex: 1;
-  min-height: 60vh;
+  min-height: 200px;
+  position: relative;
 }
 
 /* Botones de navegación */
 .nav-button {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   color: white;
   border: none;
-  width: 60px;
-  height: 60px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.2rem;
+  transition: background 0.2s;
   flex-shrink: 0;
 }
 
 .nav-button:hover {
-  background: rgba(83, 122, 90, 0.8);
-  transform: scale(1.1);
-  border-color: rgba(83, 122, 90, 0.9);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /* Contenedor de la imagen principal */
 .image-display-container {
   position: relative;
   flex: 1;
-  max-width: 80%;
-  max-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 0;
 }
 
 .full-size-image {
   max-width: 100%;
-  max-height: 70vh;
+  max-height: 60vh;
+  max-height: 60dvh;
   object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.full-size-image:hover {
-  transform: scale(1.01);
+  border-radius: 8px;
 }
 
 /* Contador de imágenes */
 .image-counter {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(0, 0, 0, 0.7);
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
 }
 
 /* Miniaturas */
 .image-thumbnails {
   display: flex;
   justify-content: center;
-  gap: 0.8rem;
-  padding: 1rem;
+  gap: 0.5rem;
+  padding: 0.5rem;
   overflow-x: auto;
-  max-width: 100%;
+  flex-wrap: nowrap;
 }
 
 .thumbnail-container {
-  width: 80px;
-  height: 80px;
-  border-radius: 8px;
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
-  opacity: 0.6;
-  transition: all 0.3s ease;
+  opacity: 0.5;
+  transition: opacity 0.2s;
   flex-shrink: 0;
   border: 2px solid transparent;
 }
 
 .thumbnail-container:hover {
-  opacity: 0.9;
-  transform: translateY(-3px);
+  opacity: 0.8;
 }
 
 .thumbnail-container.active {
   opacity: 1;
   border-color: #537A5A;
-  box-shadow: 0 5px 15px rgba(83, 122, 90, 0.3);
 }
 
 .thumbnail-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Responsive para galería de imágenes */
+@media (max-width: 600px) {
+  .image-modal-content {
+    padding: 0.75rem;
+  }
+
+  .nav-button {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .full-size-image {
+    max-height: 50vh;
+    max-height: 50dvh;
+  }
+
+  .thumbnail-container {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* Estilos para imágenes clickeables en el modal de áreas */
@@ -2228,17 +2161,17 @@ section {
   .image-modal-main {
     min-height: 50vh;
   }
-  
+
   .full-size-image {
     max-height: 60vh;
   }
-  
+
   .nav-button {
     width: 50px;
     height: 50px;
     font-size: 1.2rem;
   }
-  
+
   .thumbnail-container {
     width: 70px;
     height: 70px;
@@ -2250,22 +2183,22 @@ section {
     padding: 1.5rem;
     width: 95%;
   }
-  
+
   .image-modal-main {
     flex-direction: column;
     min-height: auto;
     gap: 0.5rem;
   }
-  
+
   .image-display-container {
     max-width: 100%;
     max-height: 50vh;
   }
-  
+
   .full-size-image {
     max-height: 50vh;
   }
-  
+
   .nav-button {
     width: 45px;
     height: 45px;
@@ -2274,25 +2207,25 @@ section {
     top: 50%;
     transform: translateY(-50%);
   }
-  
+
   .prev-button {
     left: 0.5rem;
   }
-  
+
   .next-button {
     right: 0.5rem;
   }
-  
+
   .image-thumbnails {
     gap: 0.5rem;
     padding: 0.5rem;
   }
-  
+
   .thumbnail-container {
     width: 60px;
     height: 60px;
   }
-  
+
   .image-modal-close {
     width: 40px;
     height: 40px;
@@ -2305,21 +2238,21 @@ section {
     padding: 1rem;
     width: 98%;
   }
-  
+
   .full-size-image {
     max-height: 40vh;
   }
-  
+
   .nav-button {
     width: 40px;
     height: 40px;
   }
-  
+
   .thumbnail-container {
     width: 50px;
     height: 50px;
   }
-  
+
   .image-counter {
     top: 0.5rem;
     right: 0.5rem;
@@ -2345,7 +2278,7 @@ section {
   .area-images-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .area-image-container {
     aspect-ratio: 16/9;
   }

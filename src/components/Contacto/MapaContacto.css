@@ -93,24 +93,25 @@
     padding: 1.5rem;
     margin: 1rem;
   }
-  
+
   .mapa-titulo {
     font-size: 1.5rem;
   }
-  
+
   .mapa-direccion {
     font-size: 1rem;
   }
-  
+
   .info-contacto {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .info-item {
     padding: 1rem;
   }
 }
+
 /* .whatsapp-btn {
   display: inline-flex;
   align-items: center;
@@ -137,6 +138,7 @@
   font-style: italic;
   margin-top: 0.5rem;
 }
+
 /* MapaContacto.css */
 .mapa-container {
   background: white;
@@ -178,7 +180,7 @@
 
 .info-contacto {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -271,15 +273,15 @@
     padding: 1.5rem;
     margin: 1rem;
   }
-  
+
   .mapa-titulo {
     font-size: 1.6rem;
   }
-  
+
   .info-contacto {
     grid-template-columns: 1fr;
   }
-  
+
   .info-item {
     padding: 1.5rem;
   }
@@ -289,24 +291,27 @@
   .mapa-container {
     padding: 1rem;
   }
-  
+
   .mapa-titulo {
     font-size: 1.4rem;
   }
-  
+
   .mapa-direccion {
     flex-direction: column;
     text-align: center;
   }
 }
+
 /* MapaContacto.css - Botón WhatsApp con texto siempre blanco */
 .whatsapp-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: #537a5a; /* Verde de la fundación */
-  color: white !important; /* FORZAR texto blanco */
+  background: #537a5a;
+  /* Verde de la fundación */
+  color: white !important;
+  /* FORZAR texto blanco */
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
@@ -317,14 +322,18 @@
   cursor: pointer;
   width: 100%;
   max-width: 250px;
-  font-family: inherit; /* Heredar fuente del body */
+  font-family: inherit;
+  /* Heredar fuente del body */
 }
 
 .whatsapp-btn:hover {
-  background: #73ae82; /* Verde más claro al hover */
-  color: white !important; /* FORZAR texto blanco en hover también */
+  background: #73ae82;
+  /* Verde más claro al hover */
+  color: white !important;
+  /* FORZAR texto blanco en hover también */
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(115, 174, 130, 0.3); /* Sombra verde suave */
+  box-shadow: 0 5px 15px rgba(115, 174, 130, 0.3);
+  /* Sombra verde suave */
 }
 
 /* También asegurar que el ícono sea blanco */

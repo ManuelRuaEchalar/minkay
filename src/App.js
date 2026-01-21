@@ -52,23 +52,27 @@ function App() {
     setSelectedImageIndex(index);
     setIsImageModalOpen(true);
     document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
   };
 
   const closeImageModal = () => {
     setIsImageModalOpen(false);
     setSelectedAreaImages([]);
     setSelectedImageIndex(0);
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.width = "";
   };
 
   const nextImage = () => {
-    setSelectedImageIndex((prevIndex) => 
+    setSelectedImageIndex((prevIndex) =>
       (prevIndex + 1) % selectedAreaImages.length
     );
   };
 
   const prevImage = () => {
-    setSelectedImageIndex((prevIndex) => 
+    setSelectedImageIndex((prevIndex) =>
       prevIndex === 0 ? selectedAreaImages.length - 1 : prevIndex - 1
     );
   };
@@ -463,12 +467,16 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
     setSelectedArea(area);
     setIsAreaModalOpen(true);
     document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
   };
 
   const closeAreaModal = () => {
     setSelectedArea(null);
     setIsAreaModalOpen(false);
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.width = "";
   };
 
   return (
@@ -713,164 +721,173 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
 
       {isAreaModalOpen && selectedArea && (
         <div
-          className="modal-overlay area-modal-overlay"
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0,0,0,0.8)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 99999,
+            padding: '12px',
+            boxSizing: 'border-box',
+          }}
           onClick={closeAreaModal}
         >
           <div
-            className="modal-content area-modal-content"
+            style={{
+              backgroundColor: 'white',
+              borderRadius: '12px',
+              width: '100%',
+              maxWidth: '500px',
+              maxHeight: 'calc(100vh - 24px)',
+              overflowY: 'auto',
+              position: 'relative',
+              boxSizing: 'border-box',
+            }}
             onClick={(e) => e.stopPropagation()}
           >
-            <button className="modal-close" onClick={closeAreaModal}>
-              <FaTimes />
-            </button>
-
-            <div className="area-modal-header">
-              <div className="area-modal-title-container">
-                <div
-                  className="area-modal-icon"
-                  style={{ color: selectedArea.color }}
-                >
-                  {selectedArea.icon}
-                </div>
-                <div>
-                  <h3 className="modal-title">{selectedArea.title}</h3>
-                  <p className="modal-subtitle">{selectedArea.description}</p>
-                </div>
+            {/* Header */}
+            <div style={{
+              padding: '16px',
+              borderBottom: '1px solid #eee',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+            }}>
+              <div style={{ color: selectedArea.color, fontSize: '28px', flexShrink: 0 }}>
+                {selectedArea.icon}
               </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <h3 style={{ margin: 0, fontSize: '16px', color: '#537A5A', fontWeight: 700 }}>
+                  {selectedArea.title}
+                </h3>
+                <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#666' }}>
+                  {selectedArea.description}
+                </p>
+              </div>
+              <button
+                onClick={closeAreaModal}
+                style={{
+                  background: '#f0f0f0',
+                  border: 'none',
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  flexShrink: 0,
+                }}
+              >
+                <FaTimes size={14} />
+              </button>
             </div>
 
-            <div className="area-modal-grid">
-              <div className="area-modal-left">
-                <div className="area-images-section">
-                  <div className="images-header">
-                    <FaImages className="images-icon" />
-                    <h4>Proyectos en Ejecución</h4>
-                  </div>
-                  <div className="area-images-grid">
-                    {selectedArea.images.map((img, index) => (
-                      <div 
-                        key={index} 
-                        className="area-image-container clickable-image"
-                        onClick={() => openImageModal(selectedArea.images, index)}
-                      >
-                        {selectedArea.id === 2 ? (
-                          // Para hidroponía, mostrar imágenes reales
-                          <img 
-                            src={img} 
-                            alt={`Proyecto ${selectedArea.title.toLowerCase()} ${index + 1}`}
-                            className="area-real-image"
-                            loading="lazy"
-                          />
-                        ) : (
-                          // Para otras áreas, mantener placeholder
-                          <div className="area-image-placeholder">
-                            <FaImages size={40} />
-                            <p>Proyecto {index + 1}</p>
-                            <small className="image-note">
-                              (Haz clic para ver imagen)
-                            </small>
-                          </div>
-                        )}
-                        <div className="image-overlay">
-                          <FaExpand className="expand-icon" />
-                          <span>Ver imagen</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="area-methodology">
-                  <h4>Metodología de Implementación</h4>
-                  <p className="methodology-text">{selectedArea.methodology}</p>
+            {/* Body */}
+            <div style={{ padding: '16px' }}>
+              {/* Descripción */}
+              <div style={{ marginBottom: '16px' }}>
+                <h4 style={{ margin: '0 0 8px', fontSize: '14px', color: '#537A5A' }}>
+                  Descripción del Programa
+                </h4>
+                <div style={{
+                  background: '#f9f9f9',
+                  padding: '12px',
+                  borderRadius: '8px',
+                  maxHeight: '150px',
+                  overflowY: 'auto',
+                  fontSize: '13px',
+                  color: '#555',
+                  lineHeight: 1.5,
+                  whiteSpace: 'pre-line',
+                }}>
+                  {selectedArea.detailedDescription}
                 </div>
               </div>
 
-              <div className="area-modal-right">
-                <div className="area-detailed-description">
-                  <h4>Descripción Detallada del Programa</h4>
-                  <div className="detailed-description-box">
-                    <p className="detailed-description-text">
-                      {selectedArea.detailedDescription}
-                    </p>
-                  </div>
+              {/* Stats */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '8px',
+                marginBottom: '16px',
+              }}>
+                <div style={{ background: '#F2E2D2', padding: '10px', borderRadius: '8px' }}>
+                  <p style={{ margin: 0, fontSize: '11px', color: '#84714F', fontWeight: 600 }}>Duración</p>
+                  <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#333' }}>{selectedArea.duration}</p>
                 </div>
-
-                <div className="area-stats-grid">
-                  <div className="area-stat-card">
-                    <div className="stat-icon">
-                      <FaCalendarAlt />
-                    </div>
-                    <div className="stat-content">
-                      <h5>Duración</h5>
-                      <p className="stat-value">{selectedArea.duration}</p>
-                    </div>
-                  </div>
-
-                  <div className="area-stat-card">
-                    <div className="stat-icon">
-                      <FaUsers />
-                    </div>
-                    <div className="stat-content">
-                      <h5>Beneficiarios Directos</h5>
-                      <p className="stat-value">{selectedArea.beneficiaries}</p>
-                    </div>
-                  </div>
-
-                  <div className="area-stat-card">
-                    <div className="stat-icon">
-                      <FaHandHoldingHeart />
-                    </div>
-                    <div className="stat-content">
-                      <h5>Impacto Medido</h5>
-                      <p className="stat-value">{selectedArea.impact}</p>
-                    </div>
-                  </div>
-
-                  <div className="area-stat-card">
-                    <div className="stat-icon">
-                      <FaLeaf />
-                    </div>
-                    <div className="stat-content">
-                      <h5>Inversión Anual</h5>
-                      <p className="stat-value">{selectedArea.budget}</p>
-                    </div>
-                  </div>
+                <div style={{ background: '#F2E2D2', padding: '10px', borderRadius: '8px' }}>
+                  <p style={{ margin: 0, fontSize: '11px', color: '#84714F', fontWeight: 600 }}>Inversión</p>
+                  <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#333' }}>{selectedArea.budget}</p>
                 </div>
+              </div>
 
-                <div className="area-results">
-                  <h4>Resultados Alcanzados</h4>
-                  <ul className="results-list">
-                    {selectedArea.detailedDescription
-                      .split("\n")
-                      .filter((line) => line.includes("✓"))
-                      .map((result, index) => (
-                        <li key={index} className="result-item">
-                          {result.replace("✓", "").trim()}
-                        </li>
-                      ))}
-                  </ul>
-                </div>
+              {/* Resultados */}
+              <div style={{ marginBottom: '16px' }}>
+                <h4 style={{ margin: '0 0 8px', fontSize: '14px', color: '#537A5A' }}>
+                  Resultados Alcanzados
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '12px', color: '#555' }}>
+                  {selectedArea.detailedDescription
+                    .split("\n")
+                    .filter((line) => line.includes("✓"))
+                    .slice(0, 5)
+                    .map((result, index) => (
+                      <li key={index} style={{ marginBottom: '4px' }}>
+                        {result.replace("✓", "").trim()}
+                      </li>
+                    ))}
+                </ul>
+              </div>
 
-                <div className="area-modal-actions">
-                  <button
-                    className="btn btn-primary"
-                    onClick={() => {
-                      closeAreaModal();
-                      document
-                        .getElementById("donaciones")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                  >
-                    <FaHandHoldingHeart /> Apoyar este Área
-                  </button>
-                  <button
-                    className="btn btn-secondary"
-                    onClick={closeAreaModal}
-                  >
-                    Ver otras áreas
-                  </button>
-                </div>
+              {/* Botones */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <button
+                  onClick={() => {
+                    closeAreaModal();
+                    document.getElementById("donaciones")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  style={{
+                    width: '100%',
+                    padding: '12px',
+                    background: '#537A5A',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '8px',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                  }}
+                >
+                  <FaHandHoldingHeart /> Apoyar este Área
+                </button>
+                <button
+                  onClick={closeAreaModal}
+                  style={{
+                    width: '100%',
+                    padding: '10px',
+                    background: 'white',
+                    color: '#537A5A',
+                    border: '2px solid #537A5A',
+                    borderRadius: '8px',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                  }}
+                >
+                  Cerrar
+                </button>
               </div>
             </div>
           </div>
@@ -879,47 +896,154 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
 
       {/* MODAL PARA VER IMÁGENES EN GRANDE */}
       {isImageModalOpen && selectedAreaImages.length > 0 && (
-        <div className="modal-overlay image-modal-overlay" onClick={closeImageModal}>
-          <div 
-            className="modal-content image-modal-content" 
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0,0,0,0.95)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 99999,
+            padding: '12px',
+            boxSizing: 'border-box',
+          }}
+          onClick={closeImageModal}
+        >
+          <div
+            style={{
+              backgroundColor: 'rgba(30,30,30,0.9)',
+              borderRadius: '12px',
+              padding: '12px',
+              width: '100%',
+              maxWidth: '500px',
+              maxHeight: 'calc(100vh - 24px)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px',
+              boxSizing: 'border-box',
+            }}
             onClick={(e) => e.stopPropagation()}
           >
-            <button className="image-modal-close" onClick={closeImageModal}>
-              <FaTimes />
-            </button>
-            
-            <div className="image-modal-main">
-              <button className="nav-button prev-button" onClick={prevImage}>
-                <FaChevronLeft />
-              </button>
-              
-              <div className="image-display-container">
-                <img 
-                  src={selectedAreaImages[selectedImageIndex]} 
-                  alt={`Imagen ${selectedImageIndex + 1}`}
-                  className="full-size-image"
-                />
-                <div className="image-counter">
-                  {selectedImageIndex + 1} / {selectedAreaImages.length}
-                </div>
-              </div>
-              
-              <button className="nav-button next-button" onClick={nextImage}>
-                <FaChevronRight />
+            {/* Header con botón cerrar */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span style={{ color: 'white', fontSize: '13px' }}>
+                {selectedImageIndex + 1} / {selectedAreaImages.length}
+              </span>
+              <button
+                onClick={closeImageModal}
+                style={{
+                  background: 'rgba(255,255,255,0.15)',
+                  border: 'none',
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  color: 'white',
+                }}
+              >
+                <FaTimes size={14} />
               </button>
             </div>
-            
-            <div className="image-thumbnails">
+
+            {/* Imagen principal */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              flex: 1,
+              minHeight: 0,
+            }}>
+              <button
+                onClick={prevImage}
+                style={{
+                  background: 'rgba(255,255,255,0.15)',
+                  border: 'none',
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  color: 'white',
+                  flexShrink: 0,
+                }}
+              >
+                <FaChevronLeft size={14} />
+              </button>
+
+              <img
+                src={selectedAreaImages[selectedImageIndex]}
+                alt={`Imagen ${selectedImageIndex + 1}`}
+                style={{
+                  maxWidth: 'calc(100% - 88px)',
+                  maxHeight: '60vh',
+                  objectFit: 'contain',
+                  borderRadius: '8px',
+                }}
+              />
+
+              <button
+                onClick={nextImage}
+                style={{
+                  background: 'rgba(255,255,255,0.15)',
+                  border: 'none',
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  color: 'white',
+                  flexShrink: 0,
+                }}
+              >
+                <FaChevronRight size={14} />
+              </button>
+            </div>
+
+            {/* Thumbnails */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '6px',
+              overflowX: 'auto',
+              padding: '4px',
+            }}>
               {selectedAreaImages.map((img, index) => (
-                <div 
-                  key={index} 
-                  className={`thumbnail-container ${index === selectedImageIndex ? 'active' : ''}`}
+                <div
+                  key={index}
                   onClick={() => setSelectedImageIndex(index)}
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '4px',
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    opacity: index === selectedImageIndex ? 1 : 0.5,
+                    border: index === selectedImageIndex ? '2px solid #537A5A' : '2px solid transparent',
+                    flexShrink: 0,
+                  }}
                 >
-                  <img 
-                    src={img} 
+                  <img
+                    src={img}
                     alt={`Miniatura ${index + 1}`}
-                    className="thumbnail-image"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                    }}
                   />
                 </div>
               ))}
@@ -1004,11 +1128,11 @@ Trabajamos con un modelo de desarrollo de base que prioriza la autogestión, la 
             <div className="footer-section">
               <div className="footer-logo-container">
                 <div className="footer-logo-img-wrapper">
-                <img
-                  src={process.env.PUBLIC_URL + "/images/minkay.png"}
-                  alt="Logo Fundación MINK'AY"
-                  className="footer-logo-img"
-                />
+                  <img
+                    src={process.env.PUBLIC_URL + "/images/minkay.png"}
+                    alt="Logo Fundación MINK'AY"
+                    className="footer-logo-img"
+                  />
                 </div>
                 <div className="footer-logo-text">
                   <h3 className="footer-logo-title">MINK'AY</h3>

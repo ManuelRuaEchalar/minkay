@@ -5,9 +5,12 @@
 .hero-slider {
   position: relative;
   width: 100%;
-  height: 90vh; /* 90% de la altura de la página */
-  max-height: 700px; /* Límite máximo */
-  min-height: 300px; /* Límite mínimo en móvil */
+  height: 90vh;
+  /* 90% de la altura de la página */
+  max-height: 700px;
+  /* Límite máximo */
+  min-height: 300px;
+  /* Límite mínimo en móvil */
   overflow: hidden;
 }
 
@@ -25,12 +28,13 @@
   justify-content: center;
   text-align: center;
   color: white;
-  
+
   /* IMAGEN DE FONDO - SIN ZOOM EXCESIVO */
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
-  background-color: #45674c; /* Color de respaldo (#45674c) */
+  background-color: #45674c;
+  /* Color de respaldo (#45674c) */
 }
 
 .slide.active {
@@ -45,69 +49,81 @@
   left: 0;
   width: 100%;
   height: 100%;
-  
+
   /* COLOR #45674c CON TRANSPARENCIA (45 = 27% opacidad en hexadecimal) */
-  background: rgba(69, 103, 76, 0.4); /* #45674c con 40% opacidad */
+  background: rgba(69, 103, 76, 0.4);
+  /* #45674c con 40% opacidad */
   z-index: 1;
 }
 
 /* CONTENEDOR DEL TEXTO CON COLOR #45674c TRANSPARENTE */
 .slide-content {
   max-width: 800px;
-  width: 90%; /* Ocupa el 90% del ancho disponible */
+  width: 90%;
+  /* Ocupa el 90% del ancho disponible */
   padding: 2.5rem 3rem;
   z-index: 2;
   position: relative;
-  
+
   /* COLOR #45674c CON TRANSPARENCIA - MENOS OSCURO */
-  background: rgba(69, 103, 76, 0.85); /* #45674c con 85% opacidad */
+  background: rgba(69, 103, 76, 0.85);
+  /* #45674c con 85% opacidad */
   border-radius: 12px;
-  
+
   /* Centrado */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
   /* Sombra sutil */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-  
+
   /* Borde sutil */
   border: 1px solid rgba(255, 255, 255, 0.1);
-  
+
   /* Ajuste para que no se vea tan grande */
-  transform: scale(0.95); /* Reducido al 95% de su tamaño */
+  transform: scale(0.95);
+  /* Reducido al 95% de su tamaño */
 }
 
 /* Título - REDUCIDO */
 .slide-content h1 {
-  font-size: 2.5rem; /* Reducido de 3rem */
+  font-size: 2.5rem;
+  /* Reducido de 3rem */
   margin-bottom: 0.75rem;
   color: white;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
   line-height: 1.2;
-  font-weight: 700; /* Reducido de 800 */
+  font-weight: 700;
+  /* Reducido de 800 */
   text-align: center;
 }
 
 /* Subtítulo - REDUCIDO */
 .slide-content p {
-  font-size: 1.1rem; /* Reducido de 1.3rem */
+  font-size: 1.1rem;
+  /* Reducido de 1.3rem */
   margin-bottom: 1.75rem;
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  line-height: 1.4; /* Reducido de 1.5 */
-  max-width: 550px; /* Reducido de 600px */
+  line-height: 1.4;
+  /* Reducido de 1.5 */
+  max-width: 550px;
+  /* Reducido de 600px */
   text-align: center;
 }
 
 /* Botón - AJUSTADO */
 .slide-content .btn {
   background: linear-gradient(135deg, #F2E2D2, #e8d4bc);
-  color: #45674c; /* Color del botón ajustado al tema */
+  color: #45674c;
+  /* Color del botón ajustado al tema */
   border: none;
-  padding: 0.9rem 2.2rem; /* Reducido ligeramente */
-  font-size: 1rem; /* Reducido de 1.1rem */
+  padding: 0.9rem 2.2rem;
+  /* Reducido ligeramente */
+  font-size: 1rem;
+  /* Reducido de 1.1rem */
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -118,7 +134,8 @@
   justify-content: center;
   text-decoration: none;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  min-height: 46px; /* Reducido de 48px */
+  min-height: 46px;
+  /* Reducido de 48px */
   cursor: pointer;
 }
 
@@ -132,7 +149,8 @@
 /* Navegación por puntos */
 .slider-nav {
   position: absolute;
-  bottom: 25px; /* Subido ligeramente */
+  bottom: 25px;
+  /* Subido ligeramente */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -141,8 +159,10 @@
 }
 
 .slider-dot {
-  width: 10px; /* Reducido de 12px */
-  height: 10px; /* Reducido de 12px */
+  width: 10px;
+  /* Reducido de 12px */
+  height: 10px;
+  /* Reducido de 12px */
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -154,7 +174,8 @@
 .slider-dot.active {
   background: #F2E2D2;
   border-color: #F2E2D2;
-  transform: scale(1.2); /* Reducido de 1.3 */
+  transform: scale(1.2);
+  /* Reducido de 1.3 */
 }
 
 .slider-dot:hover {
@@ -168,31 +189,36 @@
 /* TABLETS (768px o menos) */
 @media (max-width: 768px) {
   .hero-slider {
-    height: 85vh; /* 85% en tablet */
+    height: 85vh;
+    /* 85% en tablet */
     max-height: 500px;
   }
-  
+
   .slide-content {
     padding: 2rem 2.5rem;
-    width: 92%; /* Un poco más ancho en tablet */
-    transform: scale(0.98); /* Casi tamaño normal */
-    background: rgba(69, 103, 76, 0.9); /* Más opaco en móvil */
+    width: 92%;
+    /* Un poco más ancho en tablet */
+    transform: scale(0.98);
+    /* Casi tamaño normal */
+    background: rgba(69, 103, 76, 0.9);
+    /* Más opaco en móvil */
   }
-  
+
   .slide-content h1 {
-    font-size: 1.8rem; /* Ajustado para tablet */
+    font-size: 1.8rem;
+    /* Ajustado para tablet */
   }
-  
+
   .slide-content p {
     font-size: 1rem;
     max-width: 500px;
   }
-  
+
   .slide-content .btn {
     padding: 0.8rem 2rem;
     font-size: 0.95rem;
   }
-  
+
   .slider-nav {
     bottom: 20px;
   }
@@ -201,41 +227,48 @@
 /* MÓVILES (480px o menos) */
 @media (max-width: 480px) {
   .hero-slider {
-    height: 80vh; /* 80% en móvil */
-    min-height: 280px;
-    max-height: 400px;
+    height: 80vh;
+    height: 80dvh;
+    /* Better for mobile browsers */
+    min-height: 350px;
+    /* Slightly taller minimum */
+    max-height: 600px;
+    /* Allow more height on taller phones */
   }
-  
+
   .slide-content {
     padding: 1.5rem;
     margin: 0 0.5rem;
-    width: 95%; /* Más ancho en móvil */
-    transform: scale(1); /* Tamaño normal en móvil */
-    background: rgba(69, 103, 76, 0.95); /* Casi sólido en móvil pequeño */
+    width: 95%;
+    /* Más ancho en móvil */
+    transform: scale(1);
+    /* Tamaño normal en móvil */
+    background: rgba(69, 103, 76, 0.95);
+    /* Casi sólido en móvil pequeño */
   }
-  
+
   .slide-content h1 {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .slide-content p {
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
     line-height: 1.3;
   }
-  
+
   .slide-content .btn {
     padding: 0.7rem 1.5rem;
     font-size: 0.9rem;
     min-height: 42px;
   }
-  
+
   .slider-nav {
     bottom: 15px;
     gap: 0.6rem;
   }
-  
+
   .slider-dot {
     width: 8px;
     height: 8px;
@@ -248,19 +281,19 @@
     height: 75vh;
     min-height: 250px;
   }
-  
+
   .slide-content {
     padding: 1.25rem;
   }
-  
+
   .slide-content h1 {
     font-size: 1.2rem;
   }
-  
+
   .slide-content p {
     font-size: 0.85rem;
   }
-  
+
   .slide-content .btn {
     padding: 0.6rem 1.25rem;
     font-size: 0.85rem;
@@ -273,11 +306,11 @@
     height: 88vh;
     max-height: 600px;
   }
-  
+
   .slide-content h1 {
     font-size: 2.2rem;
   }
-  
+
   .slide-content p {
     font-size: 1.05rem;
   }
@@ -289,17 +322,19 @@
     height: 90vh;
     max-height: 750px;
   }
-  
+
   .slide-content h1 {
-    font-size: 2.8rem; /* Un poco más grande que en desktop normal */
+    font-size: 2.8rem;
+    /* Un poco más grande que en desktop normal */
   }
-  
+
   .slide-content p {
     font-size: 1.2rem;
   }
-  
+
   .slide-content {
-    transform: scale(0.98); /* Un poco más grande en pantallas grandes */
+    transform: scale(0.98);
+    /* Un poco más grande en pantallas grandes */
   }
 }
 
@@ -309,14 +344,17 @@
 
 /* Si las imágenes aún se ven con mucho zoom */
 .slide.zoom-ajustado {
-  background-size: 100% auto !important; /* Ajusta ancho al 100%, altura automática */
-  background-position: center 30% !important; /* Enfoca en la parte superior de la imagen */
+  background-size: 100% auto !important;
+  /* Ajusta ancho al 100%, altura automática */
+  background-position: center 30% !important;
+  /* Enfoca en la parte superior de la imagen */
 }
 
 /* Para imágenes que deben verse completas */
 .slide.imagen-completa {
   background-size: contain !important;
-  background-color: #45674c; /* Color de fondo para espacios vacíos */
+  background-color: #45674c;
+  /* Color de fondo para espacios vacíos */
 }
 
 /* ================================
@@ -354,19 +392,24 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 5px;
   font-size: 12px;
   border-radius: 3px;
   z-index: 1000;
 }
+
 /* ===== BOTÓN HAMBURGUESA MÓVIL - SOLO ESTO ===== */
 @media (max-width: 767px) {
   .menu-toggle {
-    position: absolute; /* SOLO ESTE CAMBIO */
-    right: 1rem; /* SOLO ESTE CAMBIO */
-    top: 50%; /* SOLO ESTE CAMBIO */
-    transform: translateY(-50%); /* SOLO ESTE CAMBIO */
+    position: absolute;
+    /* SOLO ESTE CAMBIO */
+    right: 1rem;
+    /* SOLO ESTE CAMBIO */
+    top: 50%;
+    /* SOLO ESTE CAMBIO */
+    transform: translateY(-50%);
+    /* SOLO ESTE CAMBIO */
   }
 }
